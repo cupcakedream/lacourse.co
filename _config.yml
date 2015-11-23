@@ -3,7 +3,7 @@ title: Mike Lacourse | Designer / Web Developer
 email: mike@lacourse.co
 description: > # this means to ignore newlines until "baseurl:"
   I'm equal parts visual designer, back-end developer, front-end developer, and marketing consultant. I work especially well with small business’s and entrepeneurs who are looking for help with the technical side of their business.
-baseurl: "/lacourse.co" # the subpath of your site, e.g. /blog/
+baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "http://www.lacourse.co" # the base hostname & protocol for your site
 github_username:  cupcakedream
 
