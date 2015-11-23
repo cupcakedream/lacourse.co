@@ -137,26 +137,26 @@ $(document).ready(function() {
 	});
 
 	// 2nd waypoint transitions sidebar from "learn more" to "request a quote" section
-	window.waypoint_2 = $('#learn-more').waypoint({
-	  handler: function(direction) {
-		$('#side-history .stick').toggleClass('end');
-	  },
-	  continuous: false,
-	  offset: function() { 
-	    height_offset = -1*($('#learn-more').outerHeight() - $('#side-history .stick').outerHeight());
-	  	return height_offset;
-	  }
-	});
+// 	window.waypoint_2 = $('#learn-more').waypoint({
+// 	  handler: function(direction) {
+// 		$('#side-history .stick').toggleClass('end');
+// 	  },
+// 	  continuous: false,
+// 	  offset: function() { 
+// 	    height_offset = -1*($('#learn-more').outerHeight() - $('#side-history .stick').outerHeight());
+// 	  	return height_offset;
+// 	  }
+// 	});
 	
 	var side_stick_1 = new Waypoint.Sticky({
 	  element: $('#side-about .stick')[0]
 	});
-	var side_stick_2 = new Waypoint.Sticky({
-	  element: $('#side-history .stick')[0]
-	});
-	var side_stick_2 = new Waypoint.Sticky({
-	  element: $('#side-reviews .stick')[0]
-	});
+// 	var side_stick_2 = new Waypoint.Sticky({
+// 	  element: $('#side-history .stick')[0]
+// 	});
+// 	var side_stick_2 = new Waypoint.Sticky({
+// 	  element: $('#side-reviews .stick')[0]
+// 	});
 	
 // 	var waypoint2 = $('#learn-more').waypoint({
 // 	  handler: function(direction) {
