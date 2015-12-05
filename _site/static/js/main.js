@@ -1,4 +1,64 @@
 
+// Initalize functions once window loads
+$(window).load(function() {
+
+	// Initialize Sticky Sidebar
+	sticky('#welcome', '#portfolio');
+
+	// Re-initialize Sticky Sidebar on Resize
+	$(window).resize(function() {
+		$(window).unbind("scroll");
+		sticky('#welcome', '#portfolio');
+	});
+
+	// Initialize Testimonial Slider	
+	var testimonials = $("#testimonials #slider");
+	testimonials.owlCarousel({
+		autoPlay: false, //Set AutoPlay to 3 seconds
+		items : 2,
+		itemsCustom : [[1024,2],[800,1]],
+		stopOnHover: true,
+		pagination: false
+	});
+
+	// Testimonial Slider Navigation
+	$("#testimonials .next").click(function(e){
+		testimonials.trigger('owl.next');
+		e.preventDefault();		
+	});
+	$("#testimonials .prev").click(function(){
+		testimonials.trigger('owl.prev');
+		e.preventDefault();
+	});
+	
+});
+
+// Load inverted color scheme if user set
+var inverted = document.cookie.split('=');
+if (inverted[1] == 'true') {
+	$('body').toggleClass('inverted');
+	$('#switch').text('Off');
+}
+
+// Switch to Invert Colors
+$('#switch').click(function(e) {
+	$('body').toggleClass('inverted');
+	if ($(this).text() == 'On') {
+		$(this).text('Off');
+		// Set Cookie to remember setting
+		var expire = Date.now() + 1000000000;
+		document.cookie = "invert=true;expires="+expire+";path=/";
+		e.preventDefault();
+	}
+	else {
+		$(this).text('On');		
+		// Set Cookie to remember setting
+		var expire = Date.now() + 1000000000;
+		document.cookie = "invert=false;expires="+expire+";path=/";
+		e.preventDefault();
+	}
+});
+
 // Simple Smooth Scrolling
 var hashTagActive = "";
 $(".smooth-scroll").click(function (event) {
@@ -13,50 +73,25 @@ $(".smooth-scroll").click(function (event) {
 		//go to destination
 		$('html,body').animate({
 			scrollTop: dest
-		}, 350, 'swing');
+		}, 325, 'swing');
 		hashTagActive = this.hash;
 });
 
-function update_sidebar(direction,section) {
-	if (section == 3 && direction == 'down') {
-			//$('.sidebar').hide();
-			//$('#mini-request').stop().fadeIn();
-	}
-	else if (section == 2) {
-		if ( !$('#mini-services').is(":visible") ) { // serves as debounce
-			//$('.sidebar').hide(	);
-			//$('#mini-services').stop().fadeIn();
-		}
-	}
-	else if (section == 1 && direction == 'up') {
-		if ( !$('#mini-about').is(":visible") ) { // serves as debounce
-			//$('.sidebar').hide();
-			//$('#mini-about').stop().fadeIn();
-		}
-	}
-}
-
-$(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
-});
-
-// Submit Request a Quote Form
-
-$('input, textarea').focus(function() {
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
-});
-
-// Variable to hold request
+// Form Handling
 var request;
-
-// Bind to the submit event of our form
 $("#make-request").submit(function(event){
+
+	$('.request-loading').addClass('active');
 
     // Abort any pending request
     if (request) {
         request.abort();
+        $('.request-loading').removeClass('active');
     }
+    
+	$(this).removeClass('error');
+	$(this).prev().removeClass('error');
+	
     // setup some local variables
     var $form = $(this);
 
@@ -67,7 +102,9 @@ $("#make-request").submit(function(event){
     	$($inputs[0]).addClass('error');
     	$($inputs[0]).prev().addClass('error');
 		dest = $('#make-request').offset().top - 100;
-		$('html,body').animate({scrollTop: dest}, 350, 'swing');		
+		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
+		$('.request-loading').removeClass('active');
+		$inputs[0].focus();	
     	return false;
     }
     else if($inputs[1].value == '') {
@@ -75,6 +112,7 @@ $("#make-request").submit(function(event){
     	$($inputs[1]).prev().addClass('error');
 		dest = $('#make-request').offset().top - 100;
 		$('html,body').animate({scrollTop: dest}, 350, 'swing');
+		$('.request-loading').removeClass('active');
     	return false;
     }
     else if($inputs[2].value == '') {
@@ -82,6 +120,7 @@ $("#make-request").submit(function(event){
     	$($inputs[2]).prev().addClass('error');
 		dest = $('#make-request').offset().top - 100;
 		$('html,body').animate({scrollTop: dest}, 350, 'swing');
+		$('.request-loading').removeClass('active');
     	return false;
     }
     else if($inputs[4].value == '') {
@@ -89,6 +128,7 @@ $("#make-request").submit(function(event){
     	$($inputs[4]).prev().addClass('error');
 		dest = $('#make-request').offset().top - 100;
 		$('html,body').animate({scrollTop: dest}, 350, 'swing');
+		$('.request-loading').removeClass('active');
     	return false;
     }
 
@@ -110,14 +150,29 @@ $("#make-request").submit(function(event){
     // Callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
-        $form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>Your request has been sent, thanks! I'll review your project requirements and get back to you as soon as possible.</p>");
-   		dest = $(document).height() - $(window).height();
-   		$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        //$form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>Your request has been sent, thanks! I'll review your project requirements and get back to you as soon as possible.</p>");
+   		//dest = $(document).height() - $(window).height();
+   		//$("html, body").animate({ scrollTop: $(document).height() }, "slow");
+   		
+   		$('.request-loading').removeClass('active');
+//    		var $inputs = $('.inputs');
+//    		$inputs.slideUp( 300, function() {
+// 
+//    		});
+
+   	   	$form.addClass('sent');
+// 		$('#make-request').append($inputs);
+// 		$inputs.remove();
+// 		$('.inputs').slideDown();
+   		
+   		$('.sent .submit-button').val('Request Sent');
+   		
     });
 
     // Callback handler that will be called on failure
     request.fail(function (jqXHR, textStatus, errorThrown){
         // Log the error to the console
+        $('.request-loading').removeClass('active');
         $form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>There was a problem processing your request, please reload the page and try again or contact me directly at mike@lacourse.co</p>");
         dest = $(document).height() - $(window).height();
         $("html, body").animate({ scrollTop: $(document).height() }, "slow");
@@ -127,50 +182,73 @@ $("#make-request").submit(function(event){
     event.preventDefault();
 });
 
-//Add waypoints for our different sections
-
-$(document).ready(function() {
-
-	// 1st waypoint transitions sidebar from "portfolio" to "learn more" section
-	window.waypoint_1 = $('#portfolio').waypoint({
-	  handler: function(direction) {
-		$('#side-about .stick').toggleClass('end');
-	  },
-	  continuous: false,
-	  offset: function() { 
-	    height_offset = -1*($('#portfolio').outerHeight() - $('#side-about .stick').outerHeight());
-	  	return height_offset;
-	  }
-	});
-	
-	var side_stick_1 = new Waypoint.Sticky({
-	  element: $('#side-about .stick')[0]
-	});
-
-// Gallery for Adventures
-	$('.adventures').magnificPopup({
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Michael Lacourse</small>';
-			}
-		}
-	});
-
-	// Switch tabs
-	$('#tab .switch').click(function(e) {
-		if( !$(this).hasClass('open') ) {
-			$('ul.tags, #tab .switch').toggleClass('open');
-		}
-		e.preventDefault();
-	});
+// Tab Interaction under Services
+$('#tab .switch').click(function(e) {
+	if( !$(this).hasClass('open') ) {
+		$('ul.tags, #tab .switch').toggleClass('open');
+	}
+	e.preventDefault();
 });
 
+// Photo Gallery for Adventures in Footer
+$('.adventures').magnificPopup({
+	type: 'image',
+	tLoading: 'Loading image...',
+	mainClass: 'mfp-img-mobile',
+	gallery: {
+		enabled: true,
+		navigateByImgClick: true,
+		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+	},
+	image: {
+		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+	}
+});
+
+// Form Error Handling (Interaction)
+$('input, textarea').click(function() {
+	$(this).removeClass('error');
+	$(this).prev().removeClass('error');
+});
+$('input, textarea').on('input',function() {
+	$(this).removeClass('error');
+	$(this).prev().removeClass('error');
+});
+
+// Sticky Sidebar
+function sticky(sidebar,content) {
+
+	// Reset element width in case window has been resized
+	$(sidebar).children('.stick').css({'width':'auto'}).removeClass('stuck stop');
+
+	// Variables
+	var $window		= $(window),
+		$sidebar	= $(sidebar).children('.stick'),
+		stuck		= false,
+		width		= $(sidebar).width(),
+		end			= $(content).height() - $window.height() -
+						( $sidebar.outerHeight() - $window.height() );
+
+	// Setup Sticky on load
+	if ( $window.scrollTop() > end) {
+		$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
+		stuck = false;
+	} else {
+		$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
+		stuck = true;
+	}
+
+	// Stick/unstick according to scroll position
+	$window.scroll(function (event) {
+		var scroll = $window.scrollTop();
+		if (scroll >= end && stuck == true) {
+			$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
+			stuck = false;
+		} else if (scroll <= end && stuck == false ) {
+			console.log('else if');
+			$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
+			stuck = true;
+		} 
+	});
+
+}
