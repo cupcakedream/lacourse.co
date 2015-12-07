@@ -1,3 +1,15 @@
+<script>
+	// Load saved color scheme
+	var inverted = document.cookie.split('=');
+	if (inverted[1] == 'true') {
+		document.body.className = 'inverted';
+		switches = document.getElementsByClassName("light-switch");
+		for (index = 0; index < switches.length; ++index) {
+			switches[index].innerHTML = "Off";
+		}
+	}
+</script>
+
 <script src="{{ site.baseurl }}/static/js/plugins.js"></script>
 <script src="{{ site.baseurl }}/static/js/tappy.js"></script>
 <script src="{{ site.baseurl }}/static/js/functional.js"></script>

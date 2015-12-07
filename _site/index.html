@@ -17,19 +17,7 @@
 
   <body>
 
-	<script>
-	// Load saved color scheme
-	var inverted = document.cookie.split('=');
-	if (inverted[1] == 'true') {
-		document.body.className = 'inverted';
-		switches = document.getElementsByClassName("light-switch");
-		for (index = 0; index < switches.length; ++index) {
-			switches[index].innerHTML = "Off";
-		}
-	}
-</script>
-
-<div id="switch" class="pure-g hide-sm"><div class="pure-u-1"><a class="light-switch icon-light-up" href="#!">On</a></div></div>
+	<div id="switch" class="pure-g hide-sm"><div class="pure-u-1"><a class="light-switch icon-light-up" href="#!">On</a></div></div>
 <div id="mobile" class="pure-g">
 <div class="pure-u-1">
 	<a class="smooth-scroll button open" href="#portfolio">Work</a>
@@ -285,7 +273,19 @@
 </div><!-- .page -->
 
 
-	<script src="/static/js/plugins.js"></script>
+	<script>
+	// Load saved color scheme
+	var inverted = document.cookie.split('=');
+	if (inverted[1] == 'true') {
+		document.body.className = 'inverted';
+		switches = document.getElementsByClassName("light-switch");
+		for (index = 0; index < switches.length; ++index) {
+			switches[index].innerHTML = "Off";
+		}
+	}
+</script>
+
+<script src="/static/js/plugins.js"></script>
 <script src="/static/js/tappy.js"></script>
 <script src="/static/js/functional.js"></script>
 
