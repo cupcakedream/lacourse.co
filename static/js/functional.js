@@ -64,7 +64,7 @@ $('.light-switch').click(function(e) {
 
 // Simple Smooth Scrolling
 var hashTagActive = "";
-$(".smooth-scroll").click(function (event) {
+$( ".smooth-scroll" ).bind( "tap", function( e ){ 
 
 	event.preventDefault();
 
@@ -87,7 +87,34 @@ $(".smooth-scroll").click(function (event) {
 	// Highlighting
 	$('.button.open').removeClass('open');
 	$(this).addClass('open');
-});
+
+}); 
+
+// var hashTagActive = "";
+// $(".smooth-scroll").click(function (event) {
+// 
+// 	event.preventDefault();
+// 
+// 	// Add margin to top of scroll position, use section margin
+// 	var offset = $('.section').css("marginBottom").replace('px', '') - 28;
+// 
+// 	//calculate destination place
+// 	var dest = 0;
+// 	if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+// 		dest = $(document).height() - $(window).height();
+// 	} else {
+// 		dest = $(this.hash).offset().top - offset;
+// 	}
+// 	//go to destination
+// 	$('html,body').animate({
+// 		scrollTop: dest
+// 	}, 325, 'swing');
+// 	hashTagActive = this.hash;
+// 	
+// 	// Highlighting
+// 	$('.button.open').removeClass('open');
+// 	$(this).addClass('open');
+// });
 
 // Form Handling
 var request;
