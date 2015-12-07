@@ -2,32 +2,36 @@
 layout: homepage
 ---
 
-<div class="pure-g"><div class="pure-u-1"><a id="switch" class="icon-light-up" href="#!">On</a></div></div>
+<div id="switch" class="pure-g hide-sm"><div class="pure-u-1"><a class="light-switch icon-light-up" href="#!">On</a></div></div>
+<div id="mobile" class="pure-g">
+<div class="pure-u-1">
+	<a class="smooth-scroll button open" href="#portfolio">Work</a>
+	<a class="smooth-scroll button" href="#about">Services</a>
+	<a class="smooth-scroll button" href="#request-a-quote">Contact</a>
+	<a class="light-switch icon-light-up button green" href="#!">On</a>
+</div>
+</div>
 
 <div class="page">
-
-	<div class="pure-g">
-	
-		<div id="welcome" class="sidebar pure-u-1 pure-u-lg-9-24 pure-u-md-9-24 pure-u-sm-9-24">
-			<div class="stick">
-				<div class="wrap">
-					<h4 class="tight">Web Designer / Developer</h4>
-					<h1 class="big">Mike Lacourse</h1>
-					<p class="single-p">I'm equal parts back-end developer, front-end developer, visual designer, and marketing connoisseur. I work especially well with small business’s and entrepeneurs who are looking to design the technical side of their business or craft their marketing efforts online. I offer marketing, branding, & logo services in collaboration with <a href="http://www.pounddesign.com" target="_blank">Pound Design</a>.</p>
-					<p><a class="blue button smooth-scroll" href="#learn-more">Learn More</a></p>
-					<p><a class="turkoyce button smooth-scroll" href="#request-a-quote">Request A Quote</a></p>
+	<div id="intro" class="section pure-g">
+		<div id="welcome" class="pure-u-1 pure-u-lg-9-24 pure-u-md-9-24 pure-u-sm-9-24">
+			<div class="sticky">
+				<div class="content">
+					<h1><span class="tight">Web Designer / Developer</span>Mike Lacourse</h1>
+					<p class="add-bottom">I'm equal parts back-end developer, front-end developer, visual designer, and marketing connoisseur. I work especially well with small business’s and entrepeneurs who are looking to design the technical side of their business or craft their marketing efforts online. I offer branding, logo, & some other marketing services by collaboration with <a href="http://www.pounddesign.com" target="_blank">Pound Design</a>.</p>
+					<p class="hide-sm"><a class="blue button smooth-scroll" href="#about">Learn More</a></p>
+					<p class="hide-sm"><a class="turkoyce button smooth-scroll" href="#request-a-quote">Request A Quote</a></p>
 				</div>
 			</div>
-		</div><!-- .sidebar -->
-	
-		<div id="portfolio" class="content pure-u-1 pure-u-lg-15-24 pure-u-md-15-24 pure-u-sm-15-24">
-			<div class="wrap">
-				<h1 style="margin-bottom:28px;">Featured Work</h1>
+		</div>
+		<div id="portfolio" class="pure-u-1 pure-u-lg-15-24 pure-u-md-15-24 pure-u-sm-15-24">
+			<div class="content">
+				<h5>Featured Work</h5>
 				
 				<div class="portfolio-entry">
 					<a href="http://doubletoasted.com/" target="_blank">
 						<span class="title">Double Toasted</span>
-						<span class="url">http://www.doubletoasted.com/</span>
+						<span class="url">www.doubletoasted.com</span>
 					</a>
 					<p class="description">The new home of the late great Spill.com community. At it’s height, the site saw 5 million visitors a month and over a half a million users. The new site employs a freemium model and an on-demand / subscription system for users to buy access to hilarious and biting movie and pop culture commentary. I designed and built the back and front end for this social network and on-demand service using WordPress, Buddypress, & WooCommerce as the backbone.</p>
 				</div>
@@ -35,7 +39,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.verdtek.com" target="_blank" >
 						<span class="title">Verdtek</span>
-						<span class="url">http://www.verdtek.com</span>
+						<span class="url">www.verdtek.com</span>
 					</a>
 					<p class="description">A tech startup based in Austin who does great work with young people in the community (see generation tek). I built the front and back end of the site based on design comps from the marketing consultant.</p>
 				</div>
@@ -43,7 +47,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://empyrealinstruments.com" target="_blank" >
 						<span class="title">Empyreal Instruments</span>
-						<span class="url">http://www.empyrealinstruments.com</span>
+						<span class="url">www.empyrealinstruments.com</span>
 					</a>
 					<p class="description">Jeff Plankenhorn is a long-time Austin musician who collaborated with a guitar making company to come up with a unique new lap steel guitar concept. I built this simple one page marketing site for their flagship guitar “The Plank”.</p>
 				</div>
@@ -51,7 +55,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://blog.violetmarsh.com" target="_blank" >
 						<span class="title">Violet Marsh Photography</span>
-						<span class="url">http://blog.violetmarsh.com</span>
+						<span class="url">blog.violetmarsh.com</span>
 					</a>
 					<p class="description">I designed and built this blog site for blogger, photography, interior designer, and my sister, Tanya Lacourse. The blog was built around generating high SEO and built simply to run fast and serve her growing readership.</p>
 				</div>
@@ -59,7 +63,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.nakedcapitalism.com" target="_blank" >
 						<span class="title">Naked Capitalism</span>
-						<span class="url">http://www.nakedcaptialism.com</span>
+						<span class="url">www.nakedcaptialism.com</span>
 					</a>
 					<p class="description">The world’s most influential finance and economics blog with trenchant commentary, penetrating investigation, and insider political/regulatory analysis. I took their existing front-end and re-coded it to be 100% responsive and to look great on any screen, big or small. .</p>
 				</div>
@@ -67,7 +71,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.bodybyframe.com/" target="_blank" >
 						<span class="title">Frame</span>
-						<span class="url">http://www.bodybyframe.com/</span>
+						<span class="url">www.bodybyframe.com/</span>
 					</a>
 					<p class="description">I did a few modifications to the existing build and added the before/after functionality on the results page.</p>
 				</div>
@@ -75,7 +79,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://thecupcakebar.com" target="_blank" >
 						<span class="title">The Cupcake Bar</span>
-						<span class="url">http://www.thecupcakebar.com</span>
+						<span class="url">www.thecupcakebar.com</span>
 					</a>
 					<p class="description">Create your own cupcakes! The cupcake bar is a unique catering business that allows people to add their own toppings, frostings, and more. I built the site based on design comps from the design company.</p>
 				</div>
@@ -83,7 +87,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.maktcreative.com" target="_blank" >
 						<span class="title">MAKT Creative</span>
-						<span class="url">http://www.maktcreative.com</span>
+						<span class="url">www.maktcreative.com</span>
 					</a>
 					<p class="description">A unique worked-owned marketing co-operative based out of San Francisco. MAKT was just starting out and needed a simple one page marketing site to get their business going. I designed and built this site for them.</p>
 				</div>
@@ -91,7 +95,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.performanceutilities.com/services/" target="_blank" >
 						<span class="title">Performance Utilities</span>
-						<span class="url">http://www.performanceutilities.com/services/</span>
+						<span class="url">www.performanceutilities.com</span>
 					</a>
 					<p class="description">Performance Utilities offers property owners an easy and reliable way to manage property utilities and renter engagement. I built out this site based on comps from the designers.</p>
 				</div>
@@ -100,7 +104,7 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://www.reconstructioninc.org" target="_blank" >
 						<span class="title">Reconstruction Inc.</span>
-						<span class="url">http://www.reconstructioninc.org</span>
+						<span class="url">www.reconstructioninc.org</span>
 					</a>
 					<p class="description">I designed and developed this new online home for the deeply rooted, Philadelphia based Reconstruction Inc. The organization is led and organized by people of color and has done an incredible amount of work in the community with families and young people that are currently or formerly incarcerated.</p>
 				</div>
@@ -110,212 +114,140 @@ layout: homepage
 				<div class="portfolio-entry">
 					<a class="portfolio-entry" href="http://pricklypairfarm.com/" target="_blank" >
 						<span class="title">Prickly Pair Farms</span>
-						<span class="url">http://www.pricklypairfarm.com/</span>
+						<span class="url">www.pricklypairfarm.com/</span>
 					</a>
 					<p class="description">I designed and built the back and front end of this Austin startup’s site with a couple of cool custom features like a flower inventory system and instagram feed.</p>
 				</div>
 
 				<div class="portfolio-entry more-entries">
-					<h3>More</h3>
-					<a href="http://www.concordlimoaustin.com" target="_blank" >http://www.concordlimoaustin.comm</a>
-					<a href="http://www.roccacustomhomes.com" target="_blank" >http://www.roccacustomhomes.com</a>
-					<a href="http://www.cfycatering.com" target="_blank" >http://www.cfycatering.com</a>
-					<a href="http://texzentinyhomes.com/" target="_blank" >http://www.texzentinyhomes.com/</a>
-					<a href="http://southaustindg.com" target="_blank" >http://www.southaustindg.com</a>
-					<a href="http://marquis-id.com/" target="_blank" >http://www.marquis-id.com/m</a>
-					<a href="http://www.summitcabinet.com" target="_blank" >http://www.summitcabinet.com</a>
-					<a href="http://www.redhornbrew.com" target="_blank" >http://www.redhornbrew.com</a>
-					<a href="http://www.imperialus.com" target="_blank" >http://www.imperialus.com</a>
-
-					<a href="http://www.pelotonu.org" target="_blank" >http://www.pelotonu.org</a>
-					<a href="http://www.shorelinecards.com" target="_blank" >http://www.shorelinecards.com</a>
-					<a href="http://www.mcnuttart.com" target="_blank" >http://www.mcnuttart.com</a>
-					<a href="http://www.smythstudio.com" target="_blank" >http://www.smythstudio.com</a>
-					<a href="http://www.reliablepoolcareaustin.com" target="_blank" >http://www.reliablepoolcareaustin.com</a>
-					<a href="http://www.thegivemob.com" target="_blank" >http://www.thegivemob.com</a>
-				</div>
-			</div><!-- .portfolio -->
-		</div><!-- .content -->
-	
-	</div>
-
-	<div class="pure-g" >
-	
-		<div class="sidebar pure-u-1 pure-u-lg-1-24 pure-u-md-1-24"></div>
-		<div id="side-history" class="sidebar portrait pure-u-1 pure-u-lg-8-24 pure-u-md-8-24 pure-u-sm-8-24">
-			<div class="wrap">
-				<div style="text-align:center;">
-					<img style="margin:auto;" src="static/images/mike-lacourse-portrait-2.jpg" width="200" alt="Mike Lacourse">
-					<h3 style="clear:both;font-weight:100;letter-spacing:0px;">Mike</h3>
-					<!--<p>It's my ability to bring design into what normally is a highly technical position. It's not enough to have a great developer. What should they focus on? What details are mission critical? Having perspective from the world of design and marketing allows me to build better web.</p>-->
+					<h6>More</h6>
+					<a href="http://www.concordlimoaustin.com" target="_blank" >www.concordlimoaustin.comm</a>
+					<a href="http://www.roccacustomhomes.com" target="_blank" >www.roccacustomhomes.com</a>
+					<a href="http://www.cfycatering.com" target="_blank" >www.cfycatering.com</a>
+					<a href="http://texzentinyhomes.com/" target="_blank" >www.texzentinyhomes.com/</a>
+					<a href="http://southaustindg.com" target="_blank" >www.southaustindg.com</a>
+					<a href="http://marquis-id.com/" target="_blank" >www.marquis-id.com/m</a>
+					<a href="http://www.summitcabinet.com" target="_blank" >www.summitcabinet.com</a>
+					<a href="http://www.redhornbrew.com" target="_blank" >www.redhornbrew.com</a>
+					<a href="http://www.imperialus.com" target="_blank" >www.imperialus.com</a>
+					<a href="http://www.pelotonu.org" target="_blank" >www.pelotonu.org</a>
+					<a href="http://www.shorelinecards.com" target="_blank">www.shorelinecards.com</a>
+					<a href="http://www.mcnuttart.com" target="_blank" >www.mcnuttart.com</a>
+					<a href="http://www.smythstudio.com" target="_blank" >www.smythstudio.com</a>
+					<a href="http://www.reliablepoolcareaustin.com" target="_blank" >www.reliablepoolcareaustin.com</a>
+					<a href="http://www.thegivemob.com" target="_blank" >www.thegivemob.com</a>
 				</div>
 			</div>
+		</div><!-- .content -->
+	</div>
+	<div id="about" class="section pure-g">
+		<div class="pure-u-1 pure-u-lg-8-24 pure-u-md-8-24 pure-u-sm-8-24">
+			<div class="content portrait center">
+				<img src="static/images/mike-lacourse-portrait-2.jpg" width="200" alt="Mike Lacourse / Web Designer / Developer">
+				<p class="topless">Mike</p>
+				<!--<p>It's my ability to bring design into what normally is a highly technical position. It's not enough to have a great developer. What should they focus on? What details are mission critical? Having perspective from the world of design and marketing allows me to build better web.</p>-->
+			</div>
 		</div>
-	
-		<div id="learn-more"  class="content pure-u-1 pure-u-lg-14-24 pure-u-md-14-24 pure-u-sm-15-24">
-			<div class="wrap">
-			
-				<h1 style="margin-top:0px;font-size:26px;margin-top:4.5px;">Well Built Web</h1>
-				<p style="font-size:17px;line-height:25px;">My clients love me because I'm easy to work with and I do great work. I’m able to keep costs down by running a small shop and by working with technology that's affordable & open-source. From your brand to your next great idea, you can trust it will be developed thoughtfully and practically.</p>
+		<div class="pure-u-1 pure-u-lg-14-24 pure-u-md-14-24 pure-u-sm-15-24">
+			<div class="content">
+				<h2>Well Built Web</h2>
+				<h3>My clients love me because I'm easy to work with and I do great work. I’m able to keep costs down by running a small shop and by working with technology that's affordable & open-source. From your brand to your next great idea, you can trust it will be developed thoughtfully and practically.</h3>
 
-				<h3 style="font-size:18px;margin-top:30px;margin-bottom:10px;">Open-source Frameworks</h3>
+				<h6>Open-source Frameworks</h6>
 				<p>WordPress powers a staggering <a href="https://wpengine.com/blog/wordpress-taking-web-check-live-wordpress-stats/" target="_blank">23% of the internet</a> and has grown into a mature and flexible framework that can power even a complex web business. Most WordPress extensions are affordable if not open-source and can sometimes cut the development costs on big projects up to 50-75%. Building on top of existing infastructure allows me to spend my time getting the details right, creating a satisfying, effective user experience.</p><p> No other platform embodies the spirit of democratic, open source software more than WordPress. The platform was built by the people, for the people, and in the process catalyzed the largest do-it-yourself community in the world. That means if you ever have a question about WordPress, it's probably been <a href="https://wordpress.org/support/" target="_blank">asked and answered</a> a hundred times over.</p> 			
 
-				<h3 style="font-size:18px;margin-top:30px;margin-bottom:10px;">The Final Product</h3>
+				<h6>The Final Product</h6>
 				<p>You'll get a beautiful, fast, reliable web site coded and tested to work on mobile, tablet, and desktop resolutions as well as all the major browsers and operating systems. For most projects, I ask for half up front to begin work and half once the project is approved and uploaded to your server.</p>
 
-				<div style="letter-spacing:0px;">
-					<h3 id="tab"><a href="#!" class="switch open">Services</a><a href="#!" class="switch">Technology & Tools</a></h3>
-					<ul class="tags open"><li><a href="http://alistapart.com/article/understandingwebdesign" target="_blank">Web design</a></li><li><a href="https://en.wikipedia.org/wiki/Web_development" target="_blank">Web Development</a></li><li><a href="https://codex.wordpress.org/WordPress_Features" target="_blank">WordPress Development</a></li><li><a href="https://codex.wordpress.org/WordPress_Site_Maintenance" target="_blank">Maintenance</a></li><li><a href="https://codex.wordpress.org/WordPress_Optimization" target="_blank">WordPress Optimization</a></li><li><a href="http://www.smashingmagazine.com/2012/12/seo-the-inconvenient-truth/" target="_blank">SEO Configuration</a></li><li><a href="http://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry" target="_blank">Front-end Design</a></li><li><a href="https://en.wikipedia.org/wiki/Front_end_development" target="_blank">Front-end Development</a></li><li><a href="https://en.wikipedia.org/wiki/Logo" target="_blank">Logo Design</a></li><li><a href="https://en.wikipedia.org/wiki/Brand_management" target="_blank">Branding</a></li></ul>
-					<ul class="tags"><li><a href="http://php.net/manual/en/intro-whatcando.php" target="_blank">PHP</a></li><li><a href="https://www.mysql.com/about/" target="_blank">MySQL</a></li><li><a href="https://wordpress.org/about/" target="_blank">WordPress<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction" target="_blank">HTML<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a></li><li><a href="http://learn.jquery.com/about-jquery/" target="_blank">jQuery</a></li><li><a href="https://github.com/dimsemenov/Magnific-Popup/" target="_blank">Magnific Popup</a></li><li><a href="https://github.com/OwlFonk/OwlCarousel" target="_blank">Owl Carousel</a></li><li><a href="http://foundation.zurb.com/" target="_blank">Zurb Foundation</a></li><li><a href="http://salvattore.com/" target="_blank">Salvattorre</a></li><li><a href="https://wordpress.org/plugins/batcache/" target="_blank">Batcache</a></li><li><a href="https://github.com/about" target="_blank">Git/hub</a></li><li><a href="http://searchbusinessanalytics.techtarget.com/definition/Google-Analytics" target="_blank">Google Analytics</a></li><li><a href="http://www.barebones.com/products/textwrangler/" target="_blank">TextWrangler</a></li><li><a href="http://www.washington.edu/itconnect/learn/workshops/online-tutorials/graphics-and-design-workshops/adobe-cs/photoshop/" target="_blank">Photoshop</a></li></ul>
-				</div>	
-			
-			</div><!-- .wrap -->
-		</div><!-- .content -->
-	
+				<!-- Services Tabs -->
+				<h6 id="tab"><a href="#!" class="switch open">Services</a><a href="#!" class="switch">Technology & Tools</a></h6>
+				<ul class="tags open"><li><a href="http://alistapart.com/article/understandingwebdesign" target="_blank">Web design</a></li><li><a href="https://en.wikipedia.org/wiki/Web_development" target="_blank">Web Development</a></li><li><a href="https://codex.wordpress.org/WordPress_Features" target="_blank">WordPress Development</a></li><li><a href="https://codex.wordpress.org/WordPress_Site_Maintenance" target="_blank">Maintenance</a></li><li><a href="https://codex.wordpress.org/WordPress_Optimization" target="_blank">WordPress Optimization</a></li><li><a href="http://www.smashingmagazine.com/2012/12/seo-the-inconvenient-truth/" target="_blank">SEO Configuration</a></li><li><a href="http://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry" target="_blank">Front-end Design</a></li><li><a href="https://en.wikipedia.org/wiki/Front_end_development" target="_blank">Front-end Development</a></li><li><a href="https://en.wikipedia.org/wiki/Logo" target="_blank">Logo Design</a></li><li><a href="https://en.wikipedia.org/wiki/Brand_management" target="_blank">Branding</a></li></ul>
+				<ul class="tags"><li><a href="http://php.net/manual/en/intro-whatcando.php" target="_blank">PHP</a></li><li><a href="https://www.mysql.com/about/" target="_blank">MySQL</a></li><li><a href="https://wordpress.org/about/" target="_blank">WordPress<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction" target="_blank">HTML<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Javascript</a></li><li><a href="http://learn.jquery.com/about-jquery/" target="_blank">jQuery</a></li><li><a href="https://github.com/dimsemenov/Magnific-Popup/" target="_blank">Magnific Popup</a></li><li><a href="https://github.com/OwlFonk/OwlCarousel" target="_blank">Owl Carousel</a></li><li><a href="http://foundation.zurb.com/" target="_blank">Zurb Foundation</a></li><li><a href="http://salvattore.com/" target="_blank">Salvattorre</a></li><li><a href="https://wordpress.org/plugins/batcache/" target="_blank">Batcache</a></li><li><a href="https://github.com/about" target="_blank">Git/hub</a></li><li><a href="http://searchbusinessanalytics.techtarget.com/definition/Google-Analytics" target="_blank">Google Analytics</a></li><li><a href="http://www.barebones.com/products/textwrangler/" target="_blank">TextWrangler</a></li><li><a href="http://www.washington.edu/itconnect/learn/workshops/online-tutorials/graphics-and-design-workshops/adobe-cs/photoshop/" target="_blank">Photoshop</a></li></ul>
+				<!--<p class="hide-sm"><a class="turkoyce button smooth-scroll" href="#request-a-quote">Request A Quote</a></p>-->
+
+			</div>
+		</div>	
 	</div>
 
-	<div id="testimonials" class="pure-g wide">
+	<div id="testimonials" class="section wide pure-g">
+
 		<div class="pure-u-1 pure-u-lg-24-24 pure-u-md-1-1">
-			<div class="stick">
-				<div class="wrap" style="margin-bottom:44px;">
-					<h1 style="line-height:29px;float:left;margin-right:15px;">Testimonials</h1>
-					<div style="float:right;"><a class="prev button" style="padding-right:15px;" href="#!">Previous</a>
-					<a class="next button" href="#!">Next</a>
-					</div>
-				</div>
+			<div class="content">
+				<h4>Testimonials</h4>
+				<!-- <div style="float:right;"><a class="prev button" style="padding-right:15px;" href="#!">Previous</a><a class="next button" href="#!">Next</a></div>-->
 			</div>
 		</div>
 		
-		<div id="slider">
-			<div class="item content pure-u-1"><!-- pure-u-1 pure-u-lg-12-24 pure-u-md-12-24 -->
-				<div class="stick">
-					<div class="wrap" style="padding:0px;">
-						<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
-						<h4 style="margin-bottom:7px;margin-top:0px;"><strong>Adrian Gates</strong>, iMedia AVM.</h4>
-					</div>
+		<div id="slideshow">
+			<div class="item pure-u-1 pure-u-lg-12-24 pure-u-md-12-24">
+				<div class="content">
+					<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
+					<cite><strong>Adrian Gates</strong>, iMedia AVM.</cite>
 				</div>
 			</div>
-			<div  class="item conten pure-u-1"><!-- pure-u-1 pure-u-lg-12-24 pure-u-md-12-24 -->
-				<div class="stick">
-					<div class="wrap item" style="padding:0px;">
-						<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
-						<h4 style="margin-bottom:7px;margin-top:0px;"><strong>Adrian Gates</strong>, iMedia AVM.</h4>
-					</div>
-				</div>
-			</div>
-			<div  class="item content pure-u-1"><!-- pure-u-1 pure-u-lg-12-24 pure-u-md-12-24 -->
-				<div class="stick">
-					<div class="wrap item" style="padding:0px;">
-						<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
-						<h4 style="margin-bottom:7px;margin-top:0px;"><strong>Adrian Gates</strong>, iMedia AVM.</h4>
-					</div>
-				</div>
-			</div>
-			<div  class="item content pure-u-1"><!-- pure-u-1 pure-u-lg-12-24 pure-u-md-12-24 -->
-				<div class="stick">
-					<div class="wrap item" style="padding:0px;">
-						<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
-						<h4 style="margin-bottom:7px;margin-top:0px;"><strong>Adrian Gates</strong>, iMedia AVM.</h4>
-					</div>
-				</div>
-			</div>
-			<div  class="item content pure-u-1"><!-- pure-u-1 pure-u-lg-12-24 pure-u-md-12-24 -->
-				<div class="stick">
-					<div class="wrap item" style="padding:0px;">
-						<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
-						<h4 style="margin-bottom:7px;margin-top:0px;"><strong>Adrian Gates</strong>, iMedia AVM.</h4>
-					</div>
+			<div  class="item pure-u-1 pure-u-lg-12-24 pure-u-md-12-24">
+				<div class="content">
+					<blockquote>Mike Lacourse has been a terrific contractor. During the two years I supervised Mike for iMedia AVM, Inc., he was one of the most frequently used contractors we hired. This was due to his skill, versatility and the quality of his character. He was professional and always had a reassuring, positive attitude. </blockquote>
+					<cite><strong>Adrian Gates</strong>, iMedia AVM.</cite>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
-	<div id="request-a-quote" class="pure-g">
-		<div class="sidebar pure-u-1 pure-u-lg-9-24 pure-u-md-9-24 pure-u-sm-1-1">	
-			<div class="wrap">
-				<h1 style="margin-bottom:10px;">Request a quote</h1>
+	<div id="request-a-quote" class="section pure-g">
+		<div class="pure-u-1 pure-u-lg-9-24 pure-u-md-9-24 pure-u-sm-1-1">
+			<div class="content">
+				<h4>Request a quote</h4>
 				<p>The more detailed information you can provide, the better. I usually follow up within 24-48 hours of receiving a request. Also feel free to call me at (512) 705-8010 or email me at mike@lacourse.co if you have any specific questions. Required fields marked *.</p>
 			</div>
 		</div>
-		<div class="content pure-u-1 pure-u-lg-15-24 pure-u-md-15-24 pure-u-sm-1-1">
-			<div class="wrap">
-				<form id="make-request">
-					<div class="inputs">
-					<span class="error-text">I'll need this</span>
-					<input name="name" placeholder="Name*">
-					<span class="error-text">I'll need this</span>
-					<input name="email" placeholder="Email*">
-					<span class="error-text">I'll need this</span>
-					<input name="phone" placeholder="Phone*">
-					<input name="website" placeholder="Current Website">
-					<span class="error-text">I'll need this</span>
-					<textarea rows="8" name="about" placeholder="Tell me about your project*"></textarea>
-					</div>
-					<input class="submit-button" type="submit" value="Send Request">
-					<div class="request-loading icon-cog"></div>
-				</form>
-			</div>
+		<div class="pure-u-1 pure-u-lg-15-24 pure-u-md-15-24 pure-u-sm-1-1">
+			<form class="content" id="make-request">
+				<div class="inputs">
+				<span class="error-text">I'll need this</span>
+				<input name="name" placeholder="Name*">
+				<span class="error-text">I'll need this</span>
+				<input name="email" placeholder="Email*">
+				<span class="error-text">I'll need this</span>
+				<input name="phone" placeholder="Phone*">
+				<input name="website" placeholder="Current Website">
+				<span class="error-text">I'll need this</span>
+				<textarea rows="8" name="about" placeholder="Tell me about your project*"></textarea>
+				</div>
+				<input class="submit-button" type="submit" value="Send Request">
+				<div class="request-loading icon-cog"></div>
+			</form>
 		</div>
 	</div>
 	
-	<div id="footer" class="pure-g">
-		<div class="content pure-u-1 pure-u-lg-9-24 pure-u-md-9-24" >
-			<div class="wrap">
+	<div id="footer" class="section pure-g">
+		<div class="pure-u-1 pure-u-lg-9-24 pure-u-md-9-24" >
+			<div class="content">
 				<img src="static/images/logo-black@2x.png" class="logo" width="150">
-				<img src="static/images/logo-white@2x.png" class="logo-invert" width="150">
-				<p>For more about what I'm up to, <a href="#blog">Check out my blog</a>, or find me on <a href="#git">Github</a>, Facebook, or Twitter.</p>	
+				<img src="static/images/logo-white@2x.png" class="logo inverse" width="150">
 				<p>Site designed and built by Mike Lacourse. All content is &copy; Lacourse Design LLC. 2015.</p>
 			</div>
 		</div>
-		<div class="content pure-u-1 pure-u-lg-15-24 pure-u-md-15-24" >
-			<div class="wrap">
-				<h3 style="font-size:18px;margin-top:0px;margin-bottom:10px;">A Little History</h3>
+		<div class="pure-u-1 pure-u-lg-15-24 pure-u-md-15-24" >
+			<div class="content">
+				<h6>A Little History</h6>
 				<p>I got my start building web sites for local bands and small business's in New England. I was always drawn to the internet. I loved that it could be both creative and technical at the same time. After working in media for a couple of years I decided to return to web design and eventually built the business I have today.</p>
 				<p>After long hard days of arranging buttons and writing functions I spend my spare time crafting the perfect song and reading about social justice, politics, & philosophy. I also love travelling and exploring natural landscapes. <a class="adventures" href="static/images/adventures/916430_814566088571349_1438544677_n.jpg" title="Walking on Enchanted Rock, Dripping Springs, Texas">Check out my latest adventures.</a></p>	
-				<!-- <h3 style="font-size:18px;margin-top:0px;margin-bottom:10px;">Social Justice</h3> -->
-				<p>Are you doing important work in your commmunity? I offer discounted design services for organizations that are contributing to the social good. Make sure to talk about what you do and ask about the discount when you request a quote.</p>
+				<p><strong>Are you doing important work in your commmunity?</strong> I'm sometimes able to offer discounted design services for non-profits, co-operatives, and loosely organized collectives.</p>
+				<!-- <p>For more about what I'm up to, <a href="#blog">Check out my blog</a>, or find me on <a href="#git">Github</a>, Facebook, or Twitter.</p>	 -->
 				<div class="hide">
-					<!-- <a class="adventures" href="static/images/adventures/10831965_406708962826543_130784948_n.jpg" title="Marin Headlands, California"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/924379_1420500168234728_1672049650_n.jpg" title="Construction Boots, Asheville, North Carolina"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/927018_431201117024292_968269884_n.jpg" title="Wine Bar in Austin, Texas"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/1389693_646818778689822_1904769187_n.jpg" title="East Side, Austin, Texas"></a> -->
 					<a class="adventures" href="static/images/adventures/1391290_812945582074146_1270468444_n.jpg" title="Ghost Ranch, Abiqui, New Mexico"></a>
-					<!-- <a class="adventures" href="static/images/adventures/10245962_635273973209813_627599549_n.jpg" title="Austin Bridge, Austin, Texas"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10245997_402761576541364_832480386_n.jpg" title="Seattle Downtown Library"></a> -->
 					<a class="adventures" href="static/images/adventures/10414010_284465571714343_794026921_n.jpg" title="Hiking, Asheville, North Carolina"></a>
-					<!-- <a class="adventures" href="static/images/adventures/10549783_787980064603691_2014906871_n.jpg" title="Downtown, San Francisco"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10643801_387443021403269_53060326_n.jpg" title="Flatbush, Brooklyn, New York"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10693625_1527286364156416_1928150286_n.jpg" title="Outside of Ithaca, Upstate New York"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10784974_339196729595901_1195140184_n.jpg" title="Beach Pathway, Key Biscayne, Florida"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10802655_599943490111105_1211994331_n.jpg" title="Church, West Philadelphia"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10817677_967632139920205_1367295504_n.jpg" title="Fareed Haque Trio, Uptown, Chicago"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10838789_884443748274236_44793712_n.jpg" title="Diner, Wyoming"></a> -->
 					<a class="adventures" href="static/images/adventures/10838791_987613037919949_1276805366_n.jpg" title="Grand Tetons, Wyoming"></a>
 					<a class="adventures" href="static/images/adventures/10899519_1546227978991948_922509455_n.jpg" title="Point Montera, California"></a>
 					<a class="adventures" href="static/images/adventures/10903699_558914970877632_185227818_n.jpg" title="Ocean Beach, San Francisco, California"></a>
-					<!-- <a class="adventures" href="static/images/adventures/10932370_1576912129216813_2113899067_n.jpg" title="Sunset, Oakland, California"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/10950572_719944734785396_679547256_n.jpg" title="Lost in Golden Gat Park, San Francisco, California"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/11084890_1601289636755649_386171020_n.jpg" title="Central High School, Manchester, New Hampshire"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/11111384_1572131103042861_1248873343_n.jpg" title="Sprtcus, Manchester, New Hampshire"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/11176636_434415336728261_335096503_n.jpg" title="The Oregon Coast"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/11243865_853405864740096_1370932025_n.jpg" title="Griffith Observatory, Los Angeles, California"></a> -->
 					<a class="adventures" href="static/images/adventures/11249342_1449141338717834_1544650284_n.jpg" title="Early Morning Snow, Angel Fire, New Mexico"></a>
-					<!-- <a class="adventures" href="static/images/adventures/11269602_701591323301017_640778962_n.jpg" title="Hiatus Kaiyote, SXSW, Austin, Texas"></a> -->
 					<a class="adventures" href="static/images/adventures/11325291_439244196237683_411142396_n.jpg" title="The Cabin, Abiqui, New Mexico"></a>
 					<a class="adventures" href="static/images/adventures/11326966_1006036279415753_1467222853_n.jpg" title="Backyard, Twentynine Palms, California"></a>
-					<!-- <a class="adventures" href="static/images/adventures/11333571_849385821821762_2023767767_n.jpg" title="Joshua Tree, California"></a> -->
 					<a class="adventures" href="static/images/adventures/928828_1496565967299484_781179842_n.jpg" title="Highway, Wyoming"></a>
 					<a class="adventures" href="static/images/adventures/11349313_1490576861260543_1504930168_n.jpg" title="Bear Mountain, Montana"></a>
-					<!-- <a class="adventures" href="static/images/adventures/11351031_1573131256283887_471374536_n.jpg" title="Top Of The World, Portland, Maine"></a> -->
 					<a class="adventures" href="static/images/adventures/11357722_1401248456869972_1622935277_n.jpg" title="Ferry, Port Angeles, Washington"></a>
-					<!-- <a class="adventures" href="static/images/adventures/11371990_882609685138180_943248725_n.jpg" title="Hawthorne Hostel, Portland, Oregon"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/64cdf02cf3ec11e2873222000a1f9e77_7.jpg" title="Glacier Park, Northwest Montana"></a> -->
-					<!-- <a class="adventures" href="static/images/adventures/11380755_1597448203843278_1378283424_n.jpg" title="Fields, Huson, Montana"></a>		 -->			
-					<!-- <a class="adventures" href="static/images/adventures/11380832_439174122923270_1800300408_n.jpg" title="Olympic Peninsula, Washington"></a> -->
 					<a class="adventures" href="static/images/adventures/11939394_533858426769249_1468907947_n.jpg" title="Wildfire Smoke, Glacier Park, Montana"></a>
-					<!-- <a class="adventures" href="static/images/adventures/IMG_4733.JPG" title="Sunset, Enchanted Rock, Dripping Springs, Texas"></a> -->
 				</div>		
 			</div>		
 		</div>
