@@ -10,15 +10,4 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/format.css">
 	<link rel="shortcut icon" href="{{ site.baseurl }}/static/images/fav.ico">
 	
-	<script>
-		// Load saved color scheme
-		var inverted = document.cookie.split('=');
-		if (inverted[1] == 'true') {
-			document.body.className = 'inverted';
-			switches = document.getElementsByClassName("light-switch");
-			for (index = 0; index < switches.length; ++index) {
-				switches[index].innerHTML = "Off";
-			}
-		}
-	</script>
 </head>

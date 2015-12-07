@@ -2,6 +2,18 @@
 layout: homepage
 ---
 
+<script>
+	// Load saved color scheme
+	var inverted = document.cookie.split('=');
+	if (inverted[1] == 'true') {
+		document.body.className = 'inverted';
+		switches = document.getElementsByClassName("light-switch");
+		for (index = 0; index < switches.length; ++index) {
+			switches[index].innerHTML = "Off";
+		}
+	}
+</script>
+
 <div id="switch" class="pure-g hide-sm"><div class="pure-u-1"><a class="light-switch icon-light-up" href="#!">On</a></div></div>
 <div id="mobile" class="pure-g">
 <div class="pure-u-1">
