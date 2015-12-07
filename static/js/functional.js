@@ -43,7 +43,8 @@ $(window).load(function() {
 });
 
 // Switch for Inverted Colors
-$('.light-switch').click(function(e) {
+// $('.light-switch').click(function(e) {
+$( ".light-switch" ).bind( "tap", function( e ){ 
 
 	$('body').toggleClass('inverted');
 	
@@ -62,7 +63,7 @@ $('.light-switch').click(function(e) {
 	
 });
 
-// Simple Smooth Scrolling
+// Simple Smooth Scrolling using Tap Library
 var hashTagActive = "";
 $( ".smooth-scroll" ).bind( "tap", function( e ){ 
 
