@@ -163,7 +163,7 @@ body.inverted {color:#f2f2f2;background:#222;}
 .my-mfp-zoom-in.mfp-removing.mfp-bg {opacity: 0;}
 
 /* Mobile */
-#mobile {display:none;width:100%;max-width:none;position:fixed;bottom:0px;z-index:1;background-color:rgba(62,144,214,1);}
+#mobile {display:none;width:100%;max-width:none;position:fixed;top:0px;z-index:1;background-color:rgba(62,144,214,1);}
 #mobile .button {padding:7px 14px;float:left;display:block;}
 #mobile .button.open {background-color:rgba(58,195,204,1)}
 #mobile .button:active {top:0px;}
