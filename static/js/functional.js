@@ -70,7 +70,7 @@ $( ".smooth-scroll" ).bind( "tap", function( e ){
 	event.preventDefault();
 
 	// Add margin to top of scroll position, use section margin
-	var offset = $('.section').css("marginBottom").replace('px', '') - 28;
+	var offset = $('.section').css("marginBottom").replace('px', '');
 
 	//calculate destination place
 	var dest = 0;
