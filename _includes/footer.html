@@ -1,6 +1,7 @@
 <script>
 	// Load saved color scheme
-	var inverted = document.cookie.split('=');
+	var cookies = document.cookie.split(';');
+	var inverted = cookies[0].replace("invert=", "");
 	if (inverted[1] == 'true') {
 		document.body.className = 'inverted';
 		switches = document.getElementsByClassName("light-switch");

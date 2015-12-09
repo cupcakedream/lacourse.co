@@ -5,7 +5,7 @@
 
 /*************************************************/
 
-body {;font-size:14px;font-weight:400;line-height:21px;background:#f2f2f2;color:#2a2a2a;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out; }
+body {font-family: 'Inconsolata', 'Open Sans' sans-serif;font-size:14px;font-weight:400;line-height:21px;background:#f2f2f2;color:#2a2a2a;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out; }
 ::selection {background-color:rgba(255,111,202,.4);color:black;}		
 
 /* Grid Parent Layouts */
@@ -35,12 +35,12 @@ h1 .tight {font-size:14px;font-weight:400;margin:0px 0px 7px 0px;display:block;}
 h2 {font-size:26px;margin-top:3.5px;margin-bottom:14px;} /* Well Built Web */
 h3 {font-size:17px;line-height:24.5px;font-weight:400;margin-top:0px;margin-bottom:45px;} /* Well Built Web Subtext */
 h4 {font-size:21px;font-weight:700;margin-top:0px;margin-bottom:14px;} /* Section Titles */
-h5 {font-size:21px;font-weight:700;margin-bottom:17.5px;margin-top:0px;} /* Featured Work */
-h6 {font-size:18px;font-weight:700;margin-top:21px;margin-bottom:0px;} /* Paragraph Headers */
+h5 {font-size:21px;font-weight:700;margin-bottom:17.5px;margin-top:0px;float:left;} /* Featured Work */
+h6 {font-size:18px;font-weight:700;margin-top:21px;margin-bottom:-7px;} /* Paragraph Headers */
 h6:first-child {margin-top:0px;margin-bottom:7px;}
 
 /* Text */
-blockquote {font-size:16px;line-height:22px;margin:0px 0px 21px 0px;font-style:italic;font-weight:400;}
+blockquote {font-size:16px;line-height:22px;margin:0px;font-style:italic;font-weight:400;}
 cite {margin-bottom:7px;margin-top:0px;font-style:normal;}
 
 /* Links */
@@ -57,19 +57,28 @@ a:active {color:#6ccc59;}
 .button {font-size:13px;font-weight:400;color:white;line-height:28px;padding:7px 24.5px;display:inline-block;text-decoration:none;position:relative;}
 .button.blue {background-color:rgba(62,144,214,1);}
 .button.green {background-color:rgba(108,204,89,1);}
-.button.turkoyce {background-color:rgba(58,195,204,1)}
+.button.turkoyce {background-color:rgba(58,195,204,1);}
 .button:active {position:relative;top:2px;}
 .button.next, .button.prev {text-decoration:none;display:inline-block;background:#dedede;color:#676767;font-size:12px;padding:1px 10px;margin:0px 7px 7px 0px;}
 .button.next:hover, .button.prev:hover {background-color:rgba(62,144,214,1);color:white;}
 .button:visited {color:white;}
 
 /* Portfolio Links/Entries */
-.portfolio-entry a .title {display:block;font-weight:600;color:#2a2a2a;transition: all .2s ease-in-out;-moz-transition: all .2s ease-in-out;-webkit-transition: all .2s ease-in-out;-ie-transition: all .2s ease-in-out;-o-transition: all .2s ease-in-out;}
+.portfolio-entry {clear:both;}
+.portfolio-entry a .title {display:inline-block;font-weight:600;color:#2a2a2a;transition: all .2s ease-in-out;-moz-transition: all .2s ease-in-out;-webkit-transition: all .2s ease-in-out;-ie-transition: all .2s ease-in-out;-o-transition: all .2s ease-in-out;}
 .portfolio-entry a .url {display:block;}
 .portfolio-entry a:hover {text-decoration:none;}
 .portfolio-entry a:hover .url, .portfolio-entry.more-entries a:hover {text-decoration:underline;}
 .portfolio-entry .description {margin:0px 0px 21px 0px;}
-.more-entries a {display:block;}
+.more-entries a {display:block;float:left;clear:both;}
+
+/* Portfolio Design/Dev Labels */
+.p-label {font-size:12px;margin-top:0px;float:right;}
+.circle {vertical-align:middle;display:inline-block;border-radius:0%;width: 6px;height: 6px;line-height:21px;}
+.circle.pink {background-color:#3ed697;}
+.circle.blue {background-color:rgba(62,144,214,1);}
+.portfolio-entry .circle {margin-left:5px;}
+.more-entries .circle {float:left;}
 
 /* Services Tab*/
 h6#tab {margin-top:35px;}
@@ -84,9 +93,9 @@ ul.tags a:hover {background-color:rgba(62,144,214,1);color:white;}
 
 /* Request Form */
 #request-a-quote p {margin-bottom:21px;}
-input/*,  input:-webkit-autofill */ {box-sizing:border-box;transition: all 0.25s ease;outline:none;border:0px;box-shadow:none;background-color:white;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:3.5px solid #fff;-webkit-text-fill-color:#999;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
-textarea {vertical-align:top;box-sizing:border-box;transition: all 0.25s ease;outline:none;background-color:white;border:0px;box-shadow:none;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:2px solid #f0f0f0;}
-input[type^="submit"] {float:left;max-width:200px;color:white;background-color:rgba(58,195,204,1);border:2px solid rgba(58,195,204,1);-webkit-text-fill-color:white;-webkit-box-shadow: 0 0 0px 1000px rgba(58,195,204,1) inset;margin-top:0px;margin-bottom:0px;}
+input/*,  input:-webkit-autofill */ {-webkit-appearance: none;border-radius:0px;box-sizing:border-box;transition: all 0.25s ease;outline:none;border:0px;box-shadow:none;background-color:white;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:3.5px solid #fff;-webkit-text-fill-color:#999;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
+textarea {-webkit-appearance: none;border-radius:0px;vertical-align:top;box-sizing:border-box;transition: all 0.25s ease;outline:none;background-color:white;border:0px;box-shadow:none;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:2px solid #f0f0f0;}
+input[type^="submit"] {-webkit-appearance: none;border-radius:0px;float:left;max-width:200px;color:white;background-color:rgba(58,195,204,1);border:2px solid rgba(58,195,204,1);-webkit-text-fill-color:white;-webkit-box-shadow: 0 0 0px 1000px rgba(58,195,204,1) inset;margin-top:0px;margin-bottom:0px;}
 input[type^="submit"]:hover {text-decoration:underline;}
 input[type^="submit"]:active {position:relative;top:1px;}
 input.error, textarea.error {border:2px solid red !important;}
@@ -118,13 +127,13 @@ textarea:focus:-ms-input-placeholder {color: #2a2a2a;}
 .sent input[type^="submit"] {margin-top:20px;background-color:#6ccc59;border:2px solid #6ccc59;-webkit-text-fill-color:white;-webkit-box-shadow: 0 0 0px 1000px #6ccc59 inset;}
 .sent input[type^="submit"]:disabled:hover {text-decoration:none;}
 
-/* Inverted Light Switch */
-body.inverted {color:#f2f2f2;background:#222;}
-.light-switch, .light-switch:visited {color:white;text-transform:uppercase;display:block; position: absolute;top: 0px;right: 0px;width: 50px;z-index: 1000;background-color:rgba(108,204,89,1);color: white;font-size: 12px;padding:3px 2px 2px 20px;text-align:left;}
+/* Light Switch (Inverted Color Button) */
+.light-switch, .light-switch:visited {color:white;text-transform:uppercase;display:block; position:fixed;top: 0px;left: 0px;width: 50px;z-index: 1000;background-color:rgba(62,144,214,1);color: white;font-size: 12px;padding:7px 14px;/* 3px 2px 2px 20px */;text-align:center;}
 .light-switch:hover, .light-switch:visited:hover {text-decoration:none;}
 .inverted .light-switch, .inverted .light-switch:visited {background-color:#555;color:#999;}
 
 /* Inverted Color Scheme */
+body.inverted {color:#f2f2f2;background:#222;}
 .inverted ::selection {background-color:rgba(255,111,202,.8);color:white;}
 .inverted .portfolio-entry a .title {color:#f2f2f2;}
 .inverted ul.tags a {background:#555;color:#999;}
@@ -173,14 +182,18 @@ body.inverted {color:#f2f2f2;background:#222;}
 #mobile .light-switch.button:active {float:right;}
 
 @media screen and (max-width: 64em) { 
-	.page {margin:20px 20px 20px 20px;font-size:17px;line-height:24.5px;}
-	.section {margin-bottom:52px;}
+	
+	
 }
 
 @media screen and (max-width: 48em) {
 
+	.page {margin:0px/* 20px 20px 20px 20px */;margin-top:59px;font-size:17px;line-height:24.5px;}
+	.section {margin-bottom:52px;}
+
 	/* Show our mobile menu */
 	#mobile {display:block;}
+	#mobile .light-switch {right:0px;left:initial;}
 	
 	/* Utility Classes */
 	.hide-sm {display:none !important;}
@@ -190,7 +203,6 @@ body.inverted {color:#f2f2f2;background:#222;}
 	.stop {position:relative;bottom:initial;}
 	
 	/* Remove left margin on content wrap for single column */
-	.page {margin:0px;margin-top:59px;}
 	.content {margin:20px;}
 	
 	/* Slightly reduce bottom margins */
@@ -198,5 +210,21 @@ body.inverted {color:#f2f2f2;background:#222;}
 	
 	/* Remove my mug on single column */
 	.content.portrait {display:none;}
+	
+	/* Popup */
+	.adventure-nav {z-index:2000;color:#fff;top:40%;}
+	.adventure-nav.left {left:0px;}
+	.adventure-nav.right {right:0px;}
+	
+	/* Text Changes */
+	ul.tags a {padding:7px 14px;font-size:14px;}
+	p, h3 {margin-top:0px;margin-bottom:35px;}
+	h3, h6#tab a {font-size:21px;line-height:28px;} /* Well Built Web Subtext */
+	h2, h4, h5, h6 {font-size:26px;margin-bottom:7px;} /* Section Titles */
 
+}
+
+@media screen and (max-width: 35.5em) {
+	/* Drop design/dev lable underneath featured work */
+	.p-label {clear:both;float:none;}
 }
