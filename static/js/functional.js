@@ -29,6 +29,7 @@ $(window).load(function() {
 		// Setup variables
 		var $form = $(this);
 		var $inputs = $form.find("input, select, textarea");
+		var serializedData = "";
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
@@ -41,16 +42,21 @@ $(window).load(function() {
 				$input.addClass('error');
 				$input.prev().addClass('error');
 
-		// 		dest = $('#make-request').offset().top - 100;
-		// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
 				$('.request-loading').removeClass('active');
 				$input.focus();
 				return false;
 			}
+			
+			// Setup our data string to pass to request
+			serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
+
 		}
+
+		serializedData = serializedData.slice(0, -1);
+		console.log(serializedData);
 	
 		// Serialize the data in the form
-		var serializedData = $form.serialize();
+		// var serializedData = $form.serialize();
 
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
@@ -129,7 +135,7 @@ $( ".smooth-scroll" ).bind( "tap", function(event){
 	}
 	
 	//go to destination
-	$('body').animate(
+	$('html,body').animate(
 		{ scrollTop: dest }, 
 		250,
 		function() {
@@ -237,6 +243,8 @@ function sticky(sidebar,content,nav) {
 			}
 		}
 		else if (scroll >= end2 && contact == false && window.scrolling == false ) { // Contact
+			$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
+			stuck = false;
 			// Nav Highlighting
 			$nav.find('.button').removeClass('open');
 			$($nav.find('.button')[2]).addClass('open');

@@ -93,7 +93,7 @@ ul.tags a:hover {background-color:rgba(62,144,214,1);color:white;}
 
 /* Request Form */
 #request-a-quote p {margin-bottom:21px;}
-input/*,  input:-webkit-autofill */ {-webkit-appearance: none;border-radius:0px;box-sizing:border-box;transition: all 0.25s ease;outline:none;border:0px;box-shadow:none;background-color:white;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:3.5px solid #fff;-webkit-text-fill-color:#999;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
+input/*,  input:-webkit-autofill */ {-webkit-appearance: none;border-radius:0px;box-sizing:border-box;transition: all 0.25s ease;outline:none;border:0px;box-shadow:none;background-color:white;font-size:14px;color:#2a2a2a;width:100%;margin-bottom:21px;padding:10px;border:3.5px solid #fff;-webkit-text-fill-color:#999;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
 textarea {-webkit-appearance: none;border-radius:0px;vertical-align:top;box-sizing:border-box;transition: all 0.25s ease;outline:none;background-color:white;border:0px;box-shadow:none;font-size:14px;color:#999;width:100%;margin-bottom:21px;padding:10px;border:2px solid #f0f0f0;}
 input[type^="submit"] {-webkit-appearance: none;border-radius:0px;float:left;max-width:200px;color:white;background-color:rgba(58,195,204,1);border:2px solid rgba(58,195,204,1);-webkit-text-fill-color:white;-webkit-box-shadow: 0 0 0px 1000px rgba(58,195,204,1) inset;margin-top:0px;margin-bottom:0px;}
 input[type^="submit"]:hover {text-decoration:underline;}
@@ -101,9 +101,7 @@ input[type^="submit"]:active {position:relative;top:1px;}
 input.error, textarea.error {border:2px solid rgba(62,144,214,1) !important;}
 .error-text {display:none;font-size:13px;color:rgba(62,144,214,1);margin-bottom:3.5px;}
 .error-text.error {display:inline-block;}
-
-/* Request Form Element Focus */
-input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus {border-color:#fff;background-color:#fff;color:#676767;-webkit-text-fill-color:#2a2a2a;;-webkit-box-shadow: 0 0 0px 1000px #fff inset;/* background-color:rgba(62,144,214,1);color:white;border:2px solid rgba(62,144,214,1); */}
+input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus {border-color:#fff;background-color:#fff;color:#2a2a2a;-webkit-text-fill-color:#2a2a2a;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
 
 /* Request Form Spinner */
 .request-loading {opacity:0;float:left;margin-left:10px;font-size:26px;margin-top:8px;color:rgba(58,195,204,1);transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;-webkit-transform-origin: 50% calc(50% - .5px);transform-origin: 50% calc(50% - .5px); -webkit-animation-name: spin; -webkit-animation-duration: 1000ms; -webkit-animation-iteration-count: infinite;-webkit-animation-timing-function: linear; -moz-animation-name: spin; -moz-animation-duration: 1000ms;-moz-animation-iteration-count: infinite;-moz-animation-timing-function: linear;-ms-animation-name: spin;-ms-animation-duration: 1000ms;-ms-animation-iteration-count: infinite;-ms-animation-timing-function: linear;-o-transition: rotate(3600deg);}
@@ -150,7 +148,7 @@ body.inverted {color:#f2f2f2;background:#222;}
 .inverted .error-text {color:rgba(58,195,204,1);}
 .inverted input.error, .inverted textarea.error {border:2px solid rgba(58,195,204,1) !important;}
 .inverted .sent input[name^="name"] {border-top:10px solid rgba(58,195,204,1) !important;}
-.inverted .sent input:not([type^="submit"]), .inverted .sent textarea {margin-bottom:0px;-webkit-box-shadow: 0 0 0px 1000px #222 inset;border:2px solid rgba(58,195,204,1);color:rgba(58,195,204,1);-webkit-text-fill-color:rgba(58,195,204,1);border-top:0px;}
+.inverted .sent input:not([type^="submit"]), .inverted .sent textarea {background-color:#222;margin-bottom:0px;-webkit-box-shadow: 0 0 0px 1000px #222 inset;border:2px solid rgba(58,195,204,1);color:rgba(58,195,204,1);-webkit-text-fill-color:rgba(58,195,204,1);border-top:0px;}
 .inverted .sent input[type^="submit"] {background-color:rgba(58,195,204,1);border-color:rgba(58,195,204,1);-webkit-box-shadow: 0 0 0px 1000px rgba(58,195,204,1) inset;}
 
 
