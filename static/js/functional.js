@@ -13,6 +13,8 @@ $(window).load(function() {
 	// Request Form
 	var request;
 	$("#make-request").submit(function(event){
+	
+		event.preventDefault();
 
 		// Abort any pending request
 		if (request) {
@@ -76,7 +78,6 @@ $(window).load(function() {
 			console.log(jqXHR,textStatus,errorThrown);
 		});
 
-		event.preventDefault();
 	});
 
 });
