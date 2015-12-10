@@ -54,7 +54,6 @@ $(window).load(function() {
 		}
 
 		serializedData = serializedData.slice(0, -1);
-		console.log(serializedData);
 	
 		// Serialize the data in the form
 		// var serializedData = $form.serialize();
@@ -67,7 +66,8 @@ $(window).load(function() {
 		request = $.ajax({
 			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
 			type: "post",
-			data: serializedData
+			data: serializedData,
+			async: true
 		});
 
 		// Success
