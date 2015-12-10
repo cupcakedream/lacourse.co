@@ -35,7 +35,8 @@ $( ".light-switch" ).bind( "tap", function( e ){
 
 // Simple Smooth Scrolling using Tap Library
 var hashTagActive = "";
-$( ".smooth-scroll" ).bind( "tap", function(e){ 
+var event;
+$( ".smooth-scroll" ).bind( "tap", function(event){ 
 
 	event.preventDefault();
 
@@ -121,25 +122,17 @@ $("#make-request").submit(function(event){
 
     // Success
     request.done(function (response, textStatus, jqXHR){
-
-        //$form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>Your request has been sent, thanks! I'll review your project requirements and get back to you as soon as possible.</p>");
-   		//dest = $(document).height() - $(window).height();
-   		//$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-   		
    		$('.request-loading').removeClass('active');
    	   	$form.addClass('sent');   		
-   		$('.sent .submit-button').val('Request Sent');
-   		
+   		$('.sent .submit-button').val('Request Sent');   		
     });
 
     // Failure
     request.fail(function (jqXHR, textStatus, errorThrown){
         $('.request-loading').removeClass('active');
-        $form.append("<p style='clear:both;margin-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+        $form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
         $form.append(jqXHR,textStatus,errorThrown);
         console.log(jqXHR,textStatus,errorThrown);
-        //dest = $(document).height() - $(window).height();
-        //$("html, body").animate({ scrollTop: $(document).height() }, "slow");
     });
 
     event.preventDefault();
@@ -227,7 +220,6 @@ function sticky(sidebar,content,nav) {
 				$nav.find('.button').removeClass('open');
 				$($nav.find('.button')[1]).addClass('open');
 				contact = false;
-				console.log('#services');
 			}
 		} 
 		else if (scroll <= end && stuck == false) { // Work
@@ -239,7 +231,6 @@ function sticky(sidebar,content,nav) {
 				$nav.find('.button').removeClass('open');
 				$($nav.find('.button')[0]).addClass('open');
 				contact = false;	
-				console.log('#work');
 			}
 		}
 		else if (scroll >= end2 && contact == false && window.scrolling == false ) { // Contact
@@ -247,7 +238,6 @@ function sticky(sidebar,content,nav) {
 			$nav.find('.button').removeClass('open');
 			$($nav.find('.button')[2]).addClass('open');
 			contact = true;
-			console.log('#contact');
 		}
 	});
 
