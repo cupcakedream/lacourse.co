@@ -9,6 +9,75 @@ $(window).load(function() {
 		$(window).unbind("scroll");
 		sticky('#welcome', '#portfolio');
 	});
+	
+	// Request Form
+	var request;
+	$("#make-request").submit(function(event){
+
+		// Abort any pending request
+		if (request) {
+			request.abort();
+			$('.request-loading').removeClass('active');
+		}
+	
+		// Remove any errors
+		// 	$(this).removeClass('error');
+		// 	$(this).prev().removeClass('error');
+	
+		// Setup variables
+		var $form = $(this);
+		var $inputs = $form.find("input, select, textarea");
+
+		// Simple Validation (if any input entered)   
+		for (index = 0; index < $inputs.length; ++index) {
+			if ($inputs[index].value == '' && index !== 3) {
+
+				// Setup our jquery object
+				$input = $($inputs[index]);
+
+				// Throw error if no value is entered
+				$input.addClass('error');
+				$input.prev().addClass('error');
+
+		// 		dest = $('#make-request').offset().top - 100;
+		// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
+				$('.request-loading').removeClass('active');
+				$input.focus();
+				return false;
+			}
+		}
+	
+		// Serialize the data in the form
+		var serializedData = $form.serialize();
+
+		// Disable inputs and add processing classes
+		$('.request-loading').addClass('active');
+		$inputs.prop("disabled", true);
+
+		// Send Request via AJAX
+		request = $.ajax({
+			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
+			type: "post",
+			data: serializedData
+		});
+
+		// Success
+		request.done(function (response, textStatus, jqXHR){
+			$('.request-loading').removeClass('active');
+			$form.addClass('sent');   		
+			$('.sent .submit-button').val('Request Sent');   		
+		});
+
+		// Failure
+		request.fail(function (jqXHR, textStatus, errorThrown){
+			$('.request-loading').removeClass('active');
+			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+			$form.append(jqXHR,textStatus,errorThrown);
+			console.log(jqXHR,textStatus,errorThrown);
+		});
+
+		event.preventDefault();
+	});
 
 });
 
@@ -69,74 +138,7 @@ $( ".smooth-scroll" ).bind( "tap", function(event){
 
 }); 
 
-// Form Handling
-var request;
-$("#make-request").submit(function(event){
 
-    // Abort any pending request
-    if (request) {
-        request.abort();
-        $('.request-loading').removeClass('active');
-    }
-    
-    // Remove any errors
-	// 	$(this).removeClass('error');
-	// 	$(this).prev().removeClass('error');
-	
-    // Setup variables
-    var $form = $(this);
-    var $inputs = $form.find("input, select, textarea");
-
-	// Simple Validation (if any input entered)   
-	for (index = 0; index < $inputs.length; ++index) {
-		if ($inputs[index].value == '' && index !== 3) {
-
-			// Setup our jquery object
-			$input = $($inputs[index]);
-
-			// Throw error if no value is entered
-			$input.addClass('error');
-			$input.prev().addClass('error');
-
-	// 		dest = $('#make-request').offset().top - 100;
-	// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
-			$('.request-loading').removeClass('active');
-			$input.focus();
-			return false;
-		}
-	}
-	
-    // Serialize the data in the form
-    var serializedData = $form.serialize();
-
-	// Disable inputs and add processing classes
-	$('.request-loading').addClass('active');
-	$inputs.prop("disabled", true);
-
-    // Send Request via AJAX
-    request = $.ajax({
-        url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
-        type: "post",
-        data: serializedData
-    });
-
-    // Success
-    request.done(function (response, textStatus, jqXHR){
-   		$('.request-loading').removeClass('active');
-   	   	$form.addClass('sent');   		
-   		$('.sent .submit-button').val('Request Sent');   		
-    });
-
-    // Failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        $('.request-loading').removeClass('active');
-        $form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
-        $form.append(jqXHR,textStatus,errorThrown);
-        console.log(jqXHR,textStatus,errorThrown);
-    });
-
-    event.preventDefault();
-});
 
 // Tab Interaction under Services
 $('#tab .switch').bind( "tap", function(e) {
