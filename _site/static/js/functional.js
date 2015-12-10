@@ -1,18 +1,8 @@
-
-// Load inverted color scheme if user set
-// var inverted = document.cookie.split('=');
-// if (inverted[1] == 'true') {
-// 	document.body.className == 'inverted';
-// 	document.getElementById("switch").innerHTML="Off";
-// 	//$('body').toggleClass('inverted');
-// 	//$('#switch').text('Off');
-// }
-
 // Initalize functions once window loads
 $(window).load(function() {
 
 	// Initialize Sticky Sidebar
-	sticky('#welcome', '#portfolio');
+	sticky('#welcome', '#portfolio', true);
 
 	// Re-initialize Sticky Sidebar on Resize
 	$(window).resize(function() {
@@ -20,26 +10,6 @@ $(window).load(function() {
 		sticky('#welcome', '#portfolio');
 	});
 
-// 	Initialize Testimonial Slider	
-// 	var testimonials = $("#testimonials #slider");
-// 	testimonials.owlCarousel({
-// 		autoPlay: false, //Set AutoPlay to 3 seconds
-// 		items : 2,
-// 		itemsCustom : [[1024,2],[800,1]],
-// 		stopOnHover: true,
-// 		pagination: false
-// 	});
-
-// 	Testimonial Slider Navigation
-// 	$("#testimonials .next").click(function(e){
-// 		testimonials.trigger('owl.next');
-// 		e.preventDefault();		
-// 	});
-// 	$("#testimonials .prev").click(function(){
-// 		testimonials.trigger('owl.prev');
-// 		e.preventDefault();
-// 	});
-	
 });
 
 // Switch for Inverted Colors
@@ -65,10 +35,17 @@ $( ".light-switch" ).bind( "tap", function( e ){
 
 // Simple Smooth Scrolling using Tap Library
 var hashTagActive = "";
-$( ".smooth-scroll" ).bind( "tap", function( e ){ 
+$( ".smooth-scroll" ).bind( "tap", function(e){ 
 
 	event.preventDefault();
 
+	// Tell our scroll event to not do anything right now
+	window.scrolling = true;
+	
+	// Highlight our nav
+	$('#navigation').find('.button').removeClass('open');
+	$(this).addClass('open');
+	
 	// Add margin to top of scroll position, use section margin
 	var offset = $('.section').css("marginBottom").replace('px', '');
 
@@ -79,49 +56,21 @@ $( ".smooth-scroll" ).bind( "tap", function( e ){
 	} else {
 		dest = $(this.hash).offset().top - offset;
 	}
-	//go to destination
-	$('html,body').animate({
-		scrollTop: dest
-	}, 325, 'swing');
-	hashTagActive = this.hash;
 	
-	// Highlighting
-	$('.button.open').removeClass('open');
-	$(this).addClass('open');
+	//go to destination
+	$('body').animate(
+		{ scrollTop: dest }, 
+		250,
+		function() {
+			window.scrolling = false;
+		});
+	hashTagActive = this.hash;
 
 }); 
-
-// var hashTagActive = "";
-// $(".smooth-scroll").click(function (event) {
-// 
-// 	event.preventDefault();
-// 
-// 	// Add margin to top of scroll position, use section margin
-// 	var offset = $('.section').css("marginBottom").replace('px', '') - 28;
-// 
-// 	//calculate destination place
-// 	var dest = 0;
-// 	if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-// 		dest = $(document).height() - $(window).height();
-// 	} else {
-// 		dest = $(this.hash).offset().top - offset;
-// 	}
-// 	//go to destination
-// 	$('html,body').animate({
-// 		scrollTop: dest
-// 	}, 325, 'swing');
-// 	hashTagActive = this.hash;
-// 	
-// 	// Highlighting
-// 	$('.button.open').removeClass('open');
-// 	$(this).addClass('open');
-// });
 
 // Form Handling
 var request;
 $("#make-request").submit(function(event){
-
-	$('.request-loading').addClass('active');
 
     // Abort any pending request
     if (request) {
@@ -129,68 +78,50 @@ $("#make-request").submit(function(event){
         $('.request-loading').removeClass('active');
     }
     
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
+    // Remove any errors
+	// 	$(this).removeClass('error');
+	// 	$(this).prev().removeClass('error');
 	
-    // setup some local variables
+    // Setup variables
     var $form = $(this);
-
-    // Let's select and cache all the fields
     var $inputs = $form.find("input, select, textarea");
-    
-    if($inputs[0].value == '') {
-    	$($inputs[0]).addClass('error');
-    	$($inputs[0]).prev().addClass('error');
-		dest = $('#make-request').offset().top - 100;
-		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
-		$('.request-loading').removeClass('active');
-		$inputs[0].focus();	
-    	return false;
-    }
-    else if($inputs[1].value == '') {
-    	$($inputs[1]).addClass('error');
-    	$($inputs[1]).prev().addClass('error');
-		dest = $('#make-request').offset().top - 100;
-		$('html,body').animate({scrollTop: dest}, 350, 'swing');
-		$('.request-loading').removeClass('active');
-    	return false;
-    }
-    else if($inputs[2].value == '') {
-    	$($inputs[2]).addClass('error');
-    	$($inputs[2]).prev().addClass('error');
-		dest = $('#make-request').offset().top - 100;
-		$('html,body').animate({scrollTop: dest}, 350, 'swing');
-		$('.request-loading').removeClass('active');
-    	return false;
-    }
-    else if($inputs[4].value == '') {
-    	$($inputs[4]).addClass('error');
-    	$($inputs[4]).prev().addClass('error');
-		dest = $('#make-request').offset().top - 100;
-		$('html,body').animate({scrollTop: dest}, 350, 'swing');
-		$('.request-loading').removeClass('active');
-    	return false;
-    }
 
+	// Simple Validation (if any input entered)   
+	for (index = 0; index < $inputs.length; ++index) {
+		if ($inputs[index].value == '' && index !== 3) {
+
+			// Setup our jquery object
+			$input = $($inputs[index]);
+
+			// Throw error if no value is entered
+			$input.addClass('error');
+			$input.prev().addClass('error');
+
+	// 		dest = $('#make-request').offset().top - 100;
+	// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
+			$('.request-loading').removeClass('active');
+			$input.focus();
+			return false;
+		}
+	}
+	
     // Serialize the data in the form
     var serializedData = $form.serialize();
 
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
-    
-    console.log('Data to be sent: ',serializedData);
+	// Disable inputs and add processing classes
+	$('.request-loading').addClass('active');
+	$inputs.prop("disabled", true);
 
-    // Fire off the request to /form.php
+    // Send Request via AJAX
     request = $.ajax({
         url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
         type: "post",
         data: serializedData
     });
 
-    // Callback handler that will be called on success
+    // Success
     request.done(function (response, textStatus, jqXHR){
+
         //$form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>Your request has been sent, thanks! I'll review your project requirements and get back to you as soon as possible.</p>");
    		//dest = $(document).height() - $(window).height();
    		//$("html, body").animate({ scrollTop: $(document).height() }, "slow");
@@ -201,21 +132,20 @@ $("#make-request").submit(function(event){
    		
     });
 
-    // Callback handler that will be called on failure
+    // Failure
     request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
+        alert(errorThrown);
         $('.request-loading').removeClass('active');
-        $form.append("<p style='font-size:17px;line-height:28px;font-weight:400;'>There was a problem processing your request, please reload the page and try again or contact me directly at mike@lacourse.co</p>");
-        dest = $(document).height() - $(window).height();
-        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        $form.append("<p style='clear:both;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+        //dest = $(document).height() - $(window).height();
+        //$("html, body").animate({ scrollTop: $(document).height() }, "slow");
     });
 
-    // Prevent default posting of form
     event.preventDefault();
 });
 
 // Tab Interaction under Services
-$('#tab .switch').click(function(e) {
+$('#tab .switch').bind( "tap", function(e) {
 	if( !$(this).hasClass('open') ) {
 		$('ul.tags, #tab .switch').toggleClass('open');
 	}
@@ -248,8 +178,10 @@ $('input, textarea').on('input',function() {
 	$(this).prev().removeClass('error');
 });
 
-// Sticky Sidebar
-function sticky(sidebar,content) {
+// Sticky Sidebar & Navigation Highlight on Scroll
+function sticky(sidebar,content,nav) {
+
+	window.scrolling = false;
 
 	// Reset element width in case window has been resized
 	$(sidebar).children('.sticky').css({'width':'auto'}).removeClass('stuck stop');
@@ -257,30 +189,65 @@ function sticky(sidebar,content) {
 	// Variables
 	var $window		= $(window),
 		$sidebar	= $(sidebar).children('.sticky'),
+		$nav		= $('#navigation'),
 		stuck		= false,
+		contact		= false,
 		width		= $(sidebar).width(),
-		end			= $(content).height() - $window.height() -
-						( $sidebar.outerHeight() - $window.height() );
+		end			= $(content).outerHeight() - $window.outerHeight() -
+						( $sidebar.outerHeight() - $window.outerHeight() ),
+		end2		=  ($('#about').outerHeight() + $('#testimonials').outerHeight() + $('#intro').outerHeight()); // 2nd section trigger
 
 	// Setup Sticky on load
 	if ( $window.scrollTop() > end) {
 		$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
 		stuck = false;
+		if ($window.scrollTop() > end2 ) {
+			$($nav.find('.button')[2]).addClass('open');
+			contact = true;
+		} else {
+			$($nav.find('.button')[1]).addClass('open');
+		}
 	} else {
 		$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
 		stuck = true;
+		$($nav.find('.button')[0]).addClass('open');
 	}
 
 	// Stick according to scroll position
 	$window.scroll(function (event) {
+		
 		var scroll = $window.scrollTop();
-		if (scroll >= end && stuck == true) {
+		if (scroll >= end && scroll < end2 && ( stuck == true || contact == true )) { // Services
 			$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
 			stuck = false;
-		} else if (scroll <= end && stuck == false ) {
+
+			// Nav Highlighting
+			if (window.scrolling == false) {
+				$nav.find('.button').removeClass('open');
+				$($nav.find('.button')[1]).addClass('open');
+				contact = false;
+				console.log('#services');
+			}
+		} 
+		else if (scroll <= end && stuck == false) { // Work
 			$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
 			stuck = true;
-		} 
+
+			// Nav Highlighting
+			if (window.scrolling == false) {
+				$nav.find('.button').removeClass('open');
+				$($nav.find('.button')[0]).addClass('open');
+				contact = false;	
+				console.log('#work');
+			}
+		}
+		else if (scroll >= end2 && contact == false && window.scrolling == false ) { // Contact
+			// Nav Highlighting
+			$nav.find('.button').removeClass('open');
+			$($nav.find('.button')[2]).addClass('open');
+			contact = true;
+			console.log('#contact');
+		}
 	});
 
 }
