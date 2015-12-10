@@ -33,10 +33,11 @@ $(window).load(function() {
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
+		
+			// Setup our jquery object
+			$input = $($inputs[index]);
+		
 			if ($inputs[index].value == '' && index !== 3) {
-
-				// Setup our jquery object
-				$input = $($inputs[index]);
 
 				// Throw error if no value is entered
 				$input.addClass('error');
