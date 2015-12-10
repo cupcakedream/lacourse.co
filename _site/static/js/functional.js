@@ -134,9 +134,10 @@ $("#make-request").submit(function(event){
 
     // Failure
     request.fail(function (jqXHR, textStatus, errorThrown){
-        alert(errorThrown);
         $('.request-loading').removeClass('active');
-        $form.append("<p style='clear:both;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+        $form.append("<p style='clear:both;margin-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+        $form.append(jqXHR,textStatus,errorThrown);
+        console.log(jqXHR,textStatus,errorThrown);
         //dest = $(document).height() - $(window).height();
         //$("html, body").animate({ scrollTop: $(document).height() }, "slow");
     });
