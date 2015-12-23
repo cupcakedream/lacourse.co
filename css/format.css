@@ -5,7 +5,7 @@
 
 /*************************************************/
 
-body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-weight:400;line-height:24.5px;background:#f2f2f2;color:#2a2a2a;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out; }
+body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-weight:500;line-height:24.5px;background:#f2f2f2;color:#2a2a2a;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out; }
 ::selection {background-color:rgba(255,111,202,.4);color:black;}		
 
 /* Grid Parent Layouts */
@@ -30,13 +30,13 @@ body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-we
 .stop {position:absolute;bottom:0px;}
 
 /* Headers */
-h1 {font-size:34px;font-weight:700;margin-bottom:14px;margin-top:0px;} /*  Mike Lacourse */
+h1 {font-size:34px;font-weight:700;margin-bottom:21px;margin-top:0px;} /*  Mike Lacourse */
 h1 .tight {font-size:14px;font-weight:400;margin:0px 0px 3.5px 0px;display:block;} /* Web Designer / Developer */
-h2 {font-size:28px;margin-top:3.5px;margin-bottom:14px;} /* Well Built Web */
+h2 {font-size:28px;margin-top:3.5px;margin-bottom:7px;} /* Well Built Web */
 h3 {font-size:22px;line-height:31.5px;font-weight:400;margin-top:0px;margin-bottom:45px;} /* Well Built Web Subtext */
 h4 {font-size:21px;font-weight:700;margin-top:0px;margin-bottom:14px;} /* Section Titles */
 h5 {font-size:21px;font-weight:700;margin-bottom:17.5px;margin-top:0px;float:left;} /* Featured Work */
-h6 {font-size:18px;font-weight:700;margin-top:21px;margin-bottom:-7px;} /* Paragraph Headers */
+h6 {font-size:18px;font-weight:400;margin-top:21px;margin-bottom:7px;} /* Paragraph Headers */
 h6:first-child {margin-top:0px;margin-bottom:7px;}
 
 /* Text */
@@ -63,8 +63,9 @@ a:active {color:#6ccc59;}
 .button.next:hover, .button.prev:hover {background-color:rgba(62,144,214,1);color:white;}
 .button:visited {color:white;}
 
-/* Welcome Section */
+/* Section Specific */
 #welcome img {display:block;}
+#about p {margin-top:0px;}
 
 /* Portfolio Links/Entries */
 .portfolio-entry {clear:both;}

@@ -10,6 +10,63 @@ $(window).load(function() {
 		sticky('#welcome', '#portfolio');
 	});
 	
+	// Switch for Inverted Colors
+	$( ".light-switch" ).bind( "tap", function( e ){ 
+
+		$('body').toggleClass('inverted');
+	
+		if ($(this).text() == 'On') {
+			$('.light-switch').text('Off');
+			var expire = Date.now() + 1000000000;
+			document.cookie = "invert=true;expires="+expire+";path=/";
+		}
+		else {
+			$('.light-switch').text('On');		
+			var expire = Date.now() + 1000000000;
+			document.cookie = "invert=false;expires="+expire+";path=/";
+		}
+	
+		e.preventDefault();
+	
+	});
+
+	// Simple Smooth Scrolling using Tap Library
+	var hashTagActive = "";
+	var event;
+	$( ".smooth-scroll" ).bind( "tap", function(event){ 
+
+		// Tell our scroll event to not do anything right now
+		window.scrolling = true;
+	
+		// Highlight our nav
+		$('#navigation').find('.button').removeClass('open');
+		$(this).addClass('open');
+	
+		// Add margin to top of scroll position, use section margin
+		var offset = $('.section').css("marginBottom").replace('px', '');
+
+		//calculate destination place
+		var dest = 0;
+		if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+			dest = $(document).height() - $(window).height();
+		} else {
+			dest = $(this.hash).offset().top - offset;
+		}
+	
+		//go to destination
+		$('html,body').animate(
+			{ scrollTop: dest }, 
+			250,
+			function() {
+				window.scrolling = false;
+			});
+		
+		hashTagActive = this.hash;
+
+		event.preventDefault();
+
+	}); 
+	
 	// Request Form
 	var request;
 	$("#make-request").submit(function(event){
@@ -50,7 +107,7 @@ $(window).load(function() {
 			
 			// Setup our data string to pass to request
 			serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
-
+			
 		}
 
 		serializedData = serializedData.slice(0, -1);
@@ -86,101 +143,42 @@ $(window).load(function() {
 		});
 
 	});
+	
+	// Photo Gallery for Adventures in Footer
+	$('.adventures').magnificPopup({
+		type: 'image',
+		tLoading: 'Loading image...',
+		mainClass: 'my-mfp-zoom-in',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			arrowMarkup: '<div title="%title%" type="button" class="adventure-nav %dir%"></div>',
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+		}
+	});
+	
+	// Form Error Handling (Interaction)
+	$('input, textarea').click(function() {
+		$(this).removeClass('error');
+		$(this).prev().removeClass('error');
+	});
+	$('input, textarea').on('input',function() {
+		$(this).removeClass('error');
+		$(this).prev().removeClass('error');
+	});
 
 });
-
-// Switch for Inverted Colors
-$( ".light-switch" ).bind( "tap", function( e ){ 
-
-	$('body').toggleClass('inverted');
-	
-	if ($(this).text() == 'On') {
-		$('.light-switch').text('Off');
-		var expire = Date.now() + 1000000000;
-		document.cookie = "invert=true;expires="+expire+";path=/";
-	}
-	else {
-		$('.light-switch').text('On');		
-		var expire = Date.now() + 1000000000;
-		document.cookie = "invert=false;expires="+expire+";path=/";
-	}
-	
-	e.preventDefault();
-	
-});
-
-// Simple Smooth Scrolling using Tap Library
-var hashTagActive = "";
-var event;
-$( ".smooth-scroll" ).bind( "tap", function(event){ 
-
-	// Tell our scroll event to not do anything right now
-	window.scrolling = true;
-	
-	// Highlight our nav
-	$('#navigation').find('.button').removeClass('open');
-	$(this).addClass('open');
-	
-	// Add margin to top of scroll position, use section margin
-	var offset = $('.section').css("marginBottom").replace('px', '');
-
-	//calculate destination place
-	var dest = 0;
-	if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-		dest = $(document).height() - $(window).height();
-	} else {
-		dest = $(this.hash).offset().top - offset;
-	}
-	
-	//go to destination
-	$('html,body').animate(
-		{ scrollTop: dest }, 
-		250,
-		function() {
-			window.scrolling = false;
-		});
-		
-	hashTagActive = this.hash;
-
-	event.preventDefault();
-
-}); 
-
-
 
 // Tab Interaction under Services
-$('#tab .switch').bind( "tap", function(e) {
-	if( !$(this).hasClass('open') ) {
-		$('ul.tags, #tab .switch').toggleClass('open');
-	}
-	e.preventDefault();
-});
-
-// Photo Gallery for Adventures in Footer
-$('.adventures').magnificPopup({
-	type: 'image',
-	tLoading: 'Loading image...',
-	mainClass: 'my-mfp-zoom-in',
-	gallery: {
-		enabled: true,
-		navigateByImgClick: true,
-		arrowMarkup: '<div title="%title%" type="button" class="adventure-nav %dir%"></div>',
-		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-	},
-	image: {
-		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-	}
-});
-
-// Form Error Handling (Interaction)
-$('input, textarea').click(function() {
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
-});
-$('input, textarea').on('input',function() {
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
-});
+// $('#tab .switch').bind( "tap", function(e) {
+// 	if( !$(this).hasClass('open') ) {
+// 		$('ul.tags, #tab .switch').toggleClass('open');
+// 	}
+// 	e.preventDefault();
+// });
 
 // Sticky Sidebar & Navigation Highlight on Scroll
 function sticky(sidebar,content,nav) {
