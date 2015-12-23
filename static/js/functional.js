@@ -90,7 +90,6 @@ $(window).load(function() {
 });
 
 // Switch for Inverted Colors
-// $('.light-switch').click(function(e) {
 $( ".light-switch" ).bind( "tap", function( e ){ 
 
 	$('body').toggleClass('inverted');
@@ -114,8 +113,6 @@ $( ".light-switch" ).bind( "tap", function( e ){
 var hashTagActive = "";
 var event;
 $( ".smooth-scroll" ).bind( "tap", function(event){ 
-
-	event.preventDefault();
 
 	// Tell our scroll event to not do anything right now
 	window.scrolling = true;
@@ -142,7 +139,10 @@ $( ".smooth-scroll" ).bind( "tap", function(event){
 		function() {
 			window.scrolling = false;
 		});
+		
 	hashTagActive = this.hash;
+
+	event.preventDefault();
 
 }); 
 

@@ -13,6 +13,8 @@ $(window).load(function() {
 	// Request Form
 	var request;
 	$("#make-request").submit(function(event){
+	
+		event.preventDefault();
 
 		// Abort any pending request
 		if (request) {
@@ -27,28 +29,34 @@ $(window).load(function() {
 		// Setup variables
 		var $form = $(this);
 		var $inputs = $form.find("input, select, textarea");
+		var serializedData = "";
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
+		
+			// Setup our jquery object
+			$input = $($inputs[index]);
+		
 			if ($inputs[index].value == '' && index !== 3) {
-
-				// Setup our jquery object
-				$input = $($inputs[index]);
 
 				// Throw error if no value is entered
 				$input.addClass('error');
 				$input.prev().addClass('error');
 
-		// 		dest = $('#make-request').offset().top - 100;
-		// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
 				$('.request-loading').removeClass('active');
 				$input.focus();
 				return false;
 			}
+			
+			// Setup our data string to pass to request
+			serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
+
 		}
+
+		serializedData = serializedData.slice(0, -1);
 	
 		// Serialize the data in the form
-		var serializedData = $form.serialize();
+		// var serializedData = $form.serialize();
 
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
@@ -58,7 +66,8 @@ $(window).load(function() {
 		request = $.ajax({
 			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
 			type: "post",
-			data: serializedData
+			data: serializedData,
+			async: true
 		});
 
 		// Success
@@ -76,13 +85,11 @@ $(window).load(function() {
 			console.log(jqXHR,textStatus,errorThrown);
 		});
 
-		event.preventDefault();
 	});
 
 });
 
 // Switch for Inverted Colors
-// $('.light-switch').click(function(e) {
 $( ".light-switch" ).bind( "tap", function( e ){ 
 
 	$('body').toggleClass('inverted');
@@ -107,8 +114,6 @@ var hashTagActive = "";
 var event;
 $( ".smooth-scroll" ).bind( "tap", function(event){ 
 
-	event.preventDefault();
-
 	// Tell our scroll event to not do anything right now
 	window.scrolling = true;
 	
@@ -128,13 +133,16 @@ $( ".smooth-scroll" ).bind( "tap", function(event){
 	}
 	
 	//go to destination
-	$('body').animate(
+	$('html,body').animate(
 		{ scrollTop: dest }, 
 		250,
 		function() {
 			window.scrolling = false;
 		});
+		
 	hashTagActive = this.hash;
+
+	event.preventDefault();
 
 }); 
 
@@ -236,6 +244,8 @@ function sticky(sidebar,content,nav) {
 			}
 		}
 		else if (scroll >= end2 && contact == false && window.scrolling == false ) { // Contact
+			$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
+			stuck = false;
 			// Nav Highlighting
 			$nav.find('.button').removeClass('open');
 			$($nav.find('.button')[2]).addClass('open');
