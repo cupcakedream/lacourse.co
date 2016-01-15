@@ -24,6 +24,8 @@ body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-we
 .center {text-align:center;}
 .right {text-align:right;}
 .topless {margin-top:0px;}
+.bottomless {margin-bottom:0px;}
+.add-bottom {margin-bottom:42px;}
 
 /* Sticky Sidebar */
 .stuck {position:fixed;}
@@ -48,9 +50,6 @@ a {text-decoration:none;color:#3e90d6;outline:none;transition: all 0.25s ease;}
 a:hover {text-decoration:underline}
 a:visited {color:gray;}
 a:active {color:#6ccc59;}
-
-/* Utility Classes */
-.add-bottom {margin-bottom:42px;}
 
 /* Buttons */
 .button {position:relative;top:0px;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;}
