@@ -86,7 +86,7 @@ $(window).load(function() {
 		// Setup variables
 		var $form 	= $(this);
 		var $inputs = $form.find("input, select, textarea");
-		var data	= 'api_user=mikelacourse&api_key=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&to=mikelacourse@gmail.com&toname=Mike%20Lacourse&subject=New%20Project%20Request&from='+ $('#make-request #email').val() +'&text=';
+		var data	= 'api_user=mikelacourse&api_key=P4ssw3rd&to=mikelacourse@gmail.com&toname=Mike%20Lacourse&subject=New%20Project%20Request&from='+ $('#make-request #email').val() +'&text=testing'; //'
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
@@ -109,7 +109,7 @@ $(window).load(function() {
 			// serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
 			
 			// Setup Email Message
-			data = data + $input.attr("name") + '\r' + $input.val() + '\r\r';
+			data = data + $input.attr("name") + '\n' + $input.val() + '\n\n';
 			
 		}
 	
@@ -123,10 +123,18 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
-			url: "http://api.sendgrid.com/api/mail.send.json",
-			type: "post",
+			url: "https://api.sendgrid.com/api/mail.send.json",
+			type: "GET",
+			dataType: "JSONP",
+			jsonpCallback: "callback",
 			data: data,
-			async: true
+			success: function (data) {
+				console.log(data);
+			},
+			async: true,
+// 			beforeSend: function (xhr) {
+// 				xhr.setRequestHeader("Authorization", "Bearer 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");
+// 			},
 		});
 
 //		Old Request via Google Docs
@@ -139,17 +147,22 @@ $(window).load(function() {
 
 		// Success
 		request.done(function (response){
+			window.x = response;
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
-			$('.sent .submit-button').val('Request Sent');  
-			console.log(response); 		
+			$('.sent .submit-button').val('Request Sent');
+			window.x = response;
 		});
+
+// 		request.load(function (response){
+// 			console.log(response);
+// 		});
 
 		// Failure
 		request.fail(function (response){
 			$('.request-loading').removeClass('active');
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
-			$form.append(jqXHR,textStatus,errorThrown);
+			$form.append(response);
 			console.log(response);
 		});
 
