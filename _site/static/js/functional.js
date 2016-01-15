@@ -84,9 +84,9 @@ $(window).load(function() {
 		// 	$(this).prev().removeClass('error');
 	
 		// Setup variables
-		var $form = $(this);
+		var $form 	= $(this);
 		var $inputs = $form.find("input, select, textarea");
-		var serializedData = "";
+		var data	= 'api_user=mikelacourse&api_key=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&to=mikelacourse@gmail.com&toname=Mike%20Lacourse&subject=New%20Project%20Request&from='+ $('#make-request #email').val() +'&text=';
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
@@ -106,13 +106,15 @@ $(window).load(function() {
 			}
 			
 			// Setup our data string to pass to request
-			serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
+			// serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
+			
+			// Setup Email Message
+			data = data + $input.attr("name") + '\r' + $input.val() + '\r\r';
 			
 		}
-
-		serializedData = serializedData.slice(0, -1);
 	
 		// Serialize the data in the form
+		// serializedData = serializedData.slice(0, -1);
 		// var serializedData = $form.serialize();
 
 		// Disable inputs and add processing classes
@@ -121,25 +123,34 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
-			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
+			url: "http://api.sendgrid.com/api/mail.send.json",
 			type: "post",
-			data: serializedData,
+			data: data,
 			async: true
 		});
 
+//		Old Request via Google Docs
+// 		request = $.ajax({
+// 			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
+// 			type: "post",
+// 			data: serializedData,
+// 			async: true
+// 		});
+
 		// Success
-		request.done(function (response, textStatus, jqXHR){
+		request.done(function (response){
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
-			$('.sent .submit-button').val('Request Sent');   		
+			$('.sent .submit-button').val('Request Sent');  
+			console.log(response); 		
 		});
 
 		// Failure
-		request.fail(function (jqXHR, textStatus, errorThrown){
+		request.fail(function (response){
 			$('.request-loading').removeClass('active');
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
 			$form.append(jqXHR,textStatus,errorThrown);
-			console.log(jqXHR,textStatus,errorThrown);
+			console.log(response);
 		});
 
 	});
