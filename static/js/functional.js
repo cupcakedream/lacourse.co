@@ -121,7 +121,7 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
-			action: "mail"
+			action: "mail",
 			url: "http://api.lacourse.co",
 			type: "POST",
 			dataType: "JSON",

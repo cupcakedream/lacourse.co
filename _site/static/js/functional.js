@@ -86,7 +86,6 @@ $(window).load(function() {
 		// Setup variables
 		var $form 	= $(this);
 		var $inputs = $form.find("input, select, textarea");
-		var data	= 'api_user=mikelacourse&api_key=P4ssw3rd&to=mikelacourse@gmail.com&toname=Mike%20Lacourse&subject=New%20Project%20Request&from='+ $('#make-request #email').val() +'&text=testing'; //'
 
 		// Simple Validation (if any input entered)   
 		for (index = 0; index < $inputs.length; ++index) {
@@ -105,17 +104,16 @@ $(window).load(function() {
 				return false;
 			}
 			
-			// Setup our data string to pass to request
-			// serializedData = serializedData + $input.attr("name") + '=' + $input.val() + '&';
-			
-			// Setup Email Message
-			data = data + $input.attr("name") + '\n' + $input.val() + '\n\n';
-			
 		}
-	
-		// Serialize the data in the form
-		// serializedData = serializedData.slice(0, -1);
-		// var serializedData = $form.serialize();
+		
+		// Compile Data
+		data = JSON.stringify({ 
+			name: $('#make-request #name').val(), 
+			email:  $('#make-request #email').val(),		
+			phone:  $('#make-request #phone').val(),
+			website:  $('#make-request #website').val(),
+			about:  $('#make-request #about').val()	
+		});
 
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
@@ -123,27 +121,14 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
-			url: "https://api.sendgrid.com/api/mail.send.json",
-			type: "GET",
-			dataType: "JSONP",
-			jsonpCallback: "callback",
+			action: "mail",
+			url: "http://api.lacourse.co",
+			type: "POST",
+			dataType: "JSON",
+			sendto: "mikelacourse@gmail.com"
 			data: data,
-			success: function (data) {
-				console.log(data);
-			},
-			async: true,
-// 			beforeSend: function (xhr) {
-// 				xhr.setRequestHeader("Authorization", "Bearer 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");
-// 			},
+			async: true
 		});
-
-//		Old Request via Google Docs
-// 		request = $.ajax({
-// 			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
-// 			type: "post",
-// 			data: serializedData,
-// 			async: true
-// 		});
 
 		// Success
 		request.done(function (response){
@@ -153,10 +138,6 @@ $(window).load(function() {
 			$('.sent .submit-button').val('Request Sent');
 			window.x = response;
 		});
-
-// 		request.load(function (response){
-// 			console.log(response);
-// 		});
 
 		// Failure
 		request.fail(function (response){
