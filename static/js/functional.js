@@ -125,7 +125,7 @@ $(window).load(function() {
 			url: "http://api.lacourse.co",
 			type: "POST",
 			dataType: "JSON",
-			sendto: "mikelacourse@gmail.com"
+			sendto: "mikelacourse@gmail.com",
 			data: data,
 			async: true
 		});
