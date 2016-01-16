@@ -126,6 +126,7 @@ $(window).load(function() {
 			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
+			dataType: "script",
 		});
 
 		// Success
