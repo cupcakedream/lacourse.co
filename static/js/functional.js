@@ -115,8 +115,6 @@ $(window).load(function() {
 			about:  $('#make-request #about').val()	
 		});
 
-		console.log(data);
-
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
 		$inputs.prop("disabled", true);
@@ -127,6 +125,7 @@ $(window).load(function() {
 			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
+			success: function(data) {console.log(data);}
 		});
 
 		// Success
