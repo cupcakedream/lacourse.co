@@ -125,7 +125,7 @@ $(window).load(function() {
 			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
-			success: function(data) {console.log(data);}
+			success: function(data) {console.log('Yay Success');}
 		});
 
 		// Success
