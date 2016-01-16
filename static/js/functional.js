@@ -115,24 +115,22 @@ $(window).load(function() {
 			about:  $('#make-request #about').val()	
 		});
 
+		console.log(data);
+
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
 		$inputs.prop("disabled", true);
 
 		// Send Request via AJAX
 		request = $.ajax({
-			action: "mail",
 			url: "http://api.lacourse.co",
-			type: "POST",
-			dataType: "JSON",
+			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
-			async: true
 		});
 
 		// Success
 		request.done(function (response){
-			window.x = response;
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
