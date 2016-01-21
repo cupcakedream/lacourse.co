@@ -112,7 +112,7 @@ $(window).load(function() {
 			email:  $('#make-request #email').val(),		
 			phone:  $('#make-request #phone').val(),
 			website:  $('#make-request #website').val(),
-			about:  $('#make-request #about').val(),
+			about:  $('#make-request #project').val(),
 			sendto: 'mike@lacourse.co',
 		};
 
@@ -125,7 +125,7 @@ $(window).load(function() {
 			type: "POST",
 			url: "http://api.lacourse.co",
 			data: data,
-			dataType: "json",
+			dataType: "html",
 		});
 
 		// Success
@@ -177,7 +177,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.2.0');
+console.log('loaded v5.2.1');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
