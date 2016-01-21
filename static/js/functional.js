@@ -107,14 +107,14 @@ $(window).load(function() {
 		}
 		
 		// Compile Data
-		data = JSON.stringify({ 
+		data = {
 			name: $('#make-request #name').val(), 
 			email:  $('#make-request #email').val(),		
 			phone:  $('#make-request #phone').val(),
 			website:  $('#make-request #website').val(),
 			about:  $('#make-request #about').val(),
 			sendto: 'mikelacourse@gmail.com',
-		});
+		};
 
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
@@ -175,7 +175,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.1.3');
+console.log('loaded v5.1.4');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
