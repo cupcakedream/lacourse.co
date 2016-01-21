@@ -133,9 +133,7 @@ $(window).load(function() {
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
-			console.log('Yay Done');
-			window.x = response;
-			//console.log( jQuery.parseJSON(response.responseText) );
+			console.log(response.message, ' Sent project request');
 		});
 
 		// Failure
@@ -143,8 +141,7 @@ $(window).load(function() {
 			$('.request-loading').removeClass('active');
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
 			$form.append(response);
-			window.x = response;
-			//console.log( jQuery.parseJSON(response.responseText) );
+			console.log(response.message, ' Request could not be sent');
 		});
 
 	});
@@ -177,7 +174,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.2.2');
+console.log('loaded v5.2.4');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
