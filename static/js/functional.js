@@ -121,12 +121,12 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
+			type: "POST",
 			url: "http://api.lacourse.co",
-			type: "post",
 			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
-			dataType: "script",
+			dataType: "text",
 		});
 
 		// Success
@@ -134,8 +134,8 @@ $(window).load(function() {
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
-			window.x = response;
 			console.log('Yay Done');
+			console.log(response);
 		});
 
 		// Failure
@@ -144,11 +144,6 @@ $(window).load(function() {
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
 			$form.append(response);
 			console.log(response);
-			console.log('Yay Fail');
-			console.log(response);
-			console.log(x);
-			console.log(y);
-			console.log(x);
 		});
 
 	});
