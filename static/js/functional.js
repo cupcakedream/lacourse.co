@@ -112,7 +112,8 @@ $(window).load(function() {
 			email:  $('#make-request #email').val(),		
 			phone:  $('#make-request #phone').val(),
 			website:  $('#make-request #website').val(),
-			about:  $('#make-request #about').val()	
+			about:  $('#make-request #about').val(),
+			sendto: 'mikelacourse@gmail.com',
 		});
 
 		// Disable inputs and add processing classes
@@ -123,8 +124,6 @@ $(window).load(function() {
 		request = $.ajax({
 			type: "POST",
 			url: "http://api.lacourse.co",
-			action: "mail",
-			sendto: "mikelacourse@gmail.com",
 			data: data,
 			dataType: "text",
 		});
@@ -139,7 +138,7 @@ $(window).load(function() {
 		});
 
 		// Failure
-		request.fail(function (response, x, y, z){
+		request.fail(function (response){
 			$('.request-loading').removeClass('active');
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
 			$form.append(response);
@@ -176,7 +175,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.1.2');
+console.log('loaded v5.1.3');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
