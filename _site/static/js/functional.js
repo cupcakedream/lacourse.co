@@ -121,30 +121,34 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
-			action: "mail",
 			url: "http://api.lacourse.co",
-			type: "POST",
-			dataType: "JSON",
-			sendto: "mikelacourse@gmail.com"
+			type: "post",
+			action: "mail",
+			sendto: "mikelacourse@gmail.com",
 			data: data,
-			async: true
+			dataType: "script",
 		});
 
 		// Success
 		request.done(function (response){
-			window.x = response;
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
 			window.x = response;
+			console.log('Yay Done');
 		});
 
 		// Failure
-		request.fail(function (response){
+		request.fail(function (response, x, y, z){
 			$('.request-loading').removeClass('active');
 			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
 			$form.append(response);
 			console.log(response);
+			console.log('Yay Fail');
+			console.log(response);
+			console.log(x);
+			console.log(y);
+			console.log(x);
 		});
 
 	});
