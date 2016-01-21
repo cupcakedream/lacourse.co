@@ -125,7 +125,7 @@ $(window).load(function() {
 			type: "POST",
 			url: "http://api.lacourse.co",
 			data: data,
-			dataType: "html",
+			dataType: "json",
 		});
 
 		// Success
