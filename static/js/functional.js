@@ -126,7 +126,7 @@ $(window).load(function() {
 			action: "mail",
 			sendto: "mikelacourse@gmail.com",
 			data: data,
-			dataType: "script",
+			dataType: "text",
 		});
 
 		// Success
@@ -175,6 +175,8 @@ $(window).load(function() {
 	});
 
 });
+
+console.log('loaded v5.1.2');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
