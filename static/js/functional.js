@@ -108,12 +108,12 @@ $(window).load(function() {
 		
 		// Compile Data
 		data = {
-			name: $('#make-request #name').val(), 
-			email:  $('#make-request #email').val(),		
-			phone:  $('#make-request #phone').val(),
-			website:  $('#make-request #website').val(),
-			about:  $('#make-request #about').val(),
-			sendto: 'mikelacourse@gmail.com',
+			"name" : $('#make-request #name').val(), 
+			"email" :  $('#make-request #email').val(),		
+			"phone" :  $('#make-request #phone').val(),
+			"website" :  $('#make-request #website').val(),
+			"about" :  $('#make-request #about').val(),
+			"sendto" : 'mikelacourse@gmail.com',
 		};
 
 		// Disable inputs and add processing classes
@@ -124,8 +124,8 @@ $(window).load(function() {
 		request = $.ajax({
 			type: "POST",
 			url: "http://api.lacourse.co",
+			dataType: "json",
 			data: data,
-			dataType: "text",
 		});
 
 		// Success
@@ -175,7 +175,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.1.4');
+console.log('loaded v5.1.5');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
