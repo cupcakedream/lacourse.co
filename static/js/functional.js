@@ -134,7 +134,7 @@ $(window).load(function() {
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
 			console.log('Yay Done');
-			console.log(response);
+			console.log( jQuery.parseJSON(response.responseText) );
 		});
 
 		// Failure
@@ -175,7 +175,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.1.6');
+console.log('loaded v5.1.7');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
