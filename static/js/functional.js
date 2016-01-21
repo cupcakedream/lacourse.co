@@ -113,7 +113,7 @@ $(window).load(function() {
 			"phone" :  $('#make-request #phone').val(),
 			"website" :  $('#make-request #website').val(),
 			"about" :  $('#make-request #about').val(),
-			"sendto" : 'mikelacourse@gmail.com',
+			"sendto" : 'mike@lacourse.co',
 		};
 
 		// Disable inputs and add processing classes
@@ -175,7 +175,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.1.5');
+console.log('loaded v5.1.6');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
