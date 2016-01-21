@@ -177,7 +177,7 @@ $(window).load(function() {
 
 });
 
-console.log('loaded v5.2.1');
+console.log('loaded v5.2.2');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
