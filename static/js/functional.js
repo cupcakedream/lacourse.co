@@ -108,12 +108,12 @@ $(window).load(function() {
 		
 		// Compile Data
 		data = {
-			"name" : $('#make-request #name').val(), 
-			"email" :  $('#make-request #email').val(),		
-			"phone" :  $('#make-request #phone').val(),
-			"website" :  $('#make-request #website').val(),
-			"about" :  $('#make-request #about').val(),
-			"sendto" : 'mike@lacourse.co',
+			name: $('#make-request #name').val(), 
+			email:  $('#make-request #email').val(),		
+			phone:  $('#make-request #phone').val(),
+			website:  $('#make-request #website').val(),
+			about:  $('#make-request #about').val(),
+			sendto: 'mike@lacourse.co',
 		};
 
 		// Disable inputs and add processing classes
