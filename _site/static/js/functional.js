@@ -16,12 +16,12 @@ $(window).load(function() {
 		$('body').toggleClass('inverted');
 	
 		if ($(this).text() == 'On') {
-			$('.light-switch').text('Off');
+			//$('.light-switch').text('Off');
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=true;expires="+expire+";path=/";
 		}
 		else {
-			$('.light-switch').text('On');		
+			//$('.light-switch').text('On');		
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=false;expires="+expire+";path=/";
 		}
@@ -107,13 +107,14 @@ $(window).load(function() {
 		}
 		
 		// Compile Data
-		data = JSON.stringify({ 
+		data = {
 			name: $('#make-request #name').val(), 
 			email:  $('#make-request #email').val(),		
 			phone:  $('#make-request #phone').val(),
 			website:  $('#make-request #website').val(),
-			about:  $('#make-request #about').val()	
-		});
+			about:  $('#make-request #project').val(),
+			sendto: 'mike@lacourse.co',
+		};
 
 		// Disable inputs and add processing classes
 		$('.request-loading').addClass('active');
@@ -121,12 +122,10 @@ $(window).load(function() {
 
 		// Send Request via AJAX
 		request = $.ajax({
+			type: "POST",
 			url: "http://api.lacourse.co",
-			type: "post",
-			action: "mail",
-			sendto: "mikelacourse@gmail.com",
 			data: data,
-			dataType: "script",
+			dataType: "json",
 		});
 
 		// Success
@@ -134,21 +133,15 @@ $(window).load(function() {
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
 			$('.sent .submit-button').val('Request Sent');
-			window.x = response;
-			console.log('Yay Done');
+			console.log(response.message, ' Sent project request');
 		});
 
 		// Failure
-		request.fail(function (response, x, y, z){
+		request.fail(function (response){
 			$('.request-loading').removeClass('active');
-			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (978) 308-9285 or email me at mike@lacourse.co</p>");
 			$form.append(response);
-			console.log(response);
-			console.log('Yay Fail');
-			console.log(response);
-			console.log(x);
-			console.log(y);
-			console.log(x);
+			console.log(response.message, ' Request could not be sent');
 		});
 
 	});

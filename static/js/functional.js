@@ -16,12 +16,12 @@ $(window).load(function() {
 		$('body').toggleClass('inverted');
 	
 		if ($(this).text() == 'On') {
-			$('.light-switch').text('Off');
+			//$('.light-switch').text('Off');
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=true;expires="+expire+";path=/";
 		}
 		else {
-			$('.light-switch').text('On');		
+			//$('.light-switch').text('On');		
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=false;expires="+expire+";path=/";
 		}
@@ -139,7 +139,7 @@ $(window).load(function() {
 		// Failure
 		request.fail(function (response){
 			$('.request-loading').removeClass('active');
-			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
+			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (978) 308-9285 or email me at mike@lacourse.co</p>");
 			$form.append(response);
 			console.log(response.message, ' Request could not be sent');
 		});
@@ -173,8 +173,6 @@ $(window).load(function() {
 	});
 
 });
-
-console.log('loaded v5.2.4');
 
 // Tab Interaction under Services
 // $('#tab .switch').bind( "tap", function(e) {
