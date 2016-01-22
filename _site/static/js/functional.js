@@ -15,13 +15,13 @@ $(window).load(function() {
 
 		$('body').toggleClass('inverted');
 	
-		if ($(this).text() == 'On') {
-			//$('.light-switch').text('Off');
+		if (!$('body').hasClass('inverted')) {
+			$('ul li').hide().fadeIn('fast');
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=true;expires="+expire+";path=/";
 		}
 		else {
-			//$('.light-switch').text('On');		
+			$('ul li').hide().fadeIn('fast');
 			var expire = Date.now() + 1000000000;
 			document.cookie = "invert=false;expires="+expire+";path=/";
 		}

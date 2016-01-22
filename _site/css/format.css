@@ -5,8 +5,8 @@
 
 /*************************************************/
 
-body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-weight:500;line-height:24.5px;background:#1e4b72;background-color:rgba(62,144,214,1);color:#2a2a2a;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out; }
-::selection {background-color:rgba(255,111,202,.4);color:black;}		
+body {font-family: 'Inconsolata', sans-serif;font-size:16px;font-weight:500;line-height:24.5px;background:#f2f2f2;color:#2a2a2a;}
+::selection {background-color:rgba(255,111,202,.4);color:black;}	
 
 /* Grid Parent Layouts */
 .pure-g {max-width:880px;position:relative;margin:auto;}
@@ -18,7 +18,8 @@ body {font-family: 'Inconsolata', 'Open Sans', sans-serif;font-size:16px;font-we
 .section {margin-bottom:98px;/* padding-bottom:154px; */} /* margin-bottom:13.666%; */
 .content {margin:0px 20px;}
 
-.content.portrait {display:inline-block;float:right;position:relative;top:-16px;margin-right:20px;}
+/* Animations */
+body, .wrapper {transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;}
 
 /* Utility Classes */
 .hide {display:none;}
@@ -45,6 +46,8 @@ h6:first-child {margin-top:0px;margin-bottom:7px;}
 /* Text */
 blockquote {font-size:16px;line-height:22px;margin:0px;font-style:italic;font-weight:400;}
 cite {margin-bottom:7px;margin-top:0px;font-style:normal;}
+ul li {list-style-type: square;}
+ul {margin-top:7px;}
 
 /* Links */
 a {text-decoration:none;color:#3e90d6;outline:none;transition: all 0.25s ease;}
@@ -56,15 +59,10 @@ a:active {color:#6ccc59;}
 .button {position:relative;top:0px;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;}
 .button {font-size:13px;font-weight:400;color:white;line-height:28px;padding:7px 24.5px;display:inline-block;text-decoration:none;position:relative;}
 .button.blue {background-color:rgba(62,144,214,1);}
-.button.green {background-color:rgba(108,204,89,1);}
-.button.turkoyce {background-color:rgba(58,195,204,1);}
 .button:active {position:relative;top:2px;}
-.button.next, .button.prev {text-decoration:none;display:inline-block;background:#dedede;color:#676767;font-size:12px;padding:1px 10px;margin:0px 7px 7px 0px;}
-.button.next:hover, .button.prev:hover {background-color:rgba(62,144,214,1);color:white;}
 .button:visited {color:white;}
 
 /* Section Specific */
-#welcome img {display:block;}
 #about p {margin-top:0px;}
 
 /* Portfolio Links/Entries */
@@ -83,17 +81,6 @@ a:active {color:#6ccc59;}
 .circle.blue {background-color:#3ed697;}
 .portfolio-entry .circle {margin-left:5px;}
 .more-entries .circle {float:left;}
-
-/* Services Tab*/
-h6#tab {margin-top:35px;}
-h6#tab a {text-decoration:none;font-size:14px;color:#CCC;padding-right:15px;font-weight:600;}
-h6#tab a:hover {color:#AAA;}
-h6#tab .open, h6#tab a.open:hover {color:#2a2a2a;cursor:default;text-decoration:none;}
-ul.tags {list-style:none;margin-top:14px;margin-bottom:0px;padding:0px;display:none;;}
-ul.tags.open {display:block;}
-ul.tags li {display:inline-block;}
-ul.tags a {text-decoration:none;display:inline-block;background:#dedede;color:#676767;font-size:12px;padding:3.5px 10px;margin:0px 7px 7px 0px;}
-ul.tags a:hover {background-color:rgba(62,144,214,1);color:white;}
 
 /* Request Form */
 #request-a-quote p {margin-bottom:21px;}
@@ -131,20 +118,14 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 .sent input[type^="submit"]:disabled:hover {text-decoration:none;}
 
 /* Light Switch (Inverted Color Button) */
-#navigation .light-switch, #navigation .light-switch:visited {float:right !important;text-transform:uppercase;display:block; width: 50px;background-color:#3587ce !important;color: white;font-size:16px;padding:7px 14px;/* 3px 2px 2px 20px */;text-align:center;}
+#navigation .light-switch, #navigation .light-switch:visited {float:right !important;text-transform:uppercase;display:block; width: 50px;background-color:none !important;color: white;font-size:16px;padding:7px 14px;/* 3px 2px 2px 20px */;text-align:center;}
 .light-switch:hover, .light-switch:visited:hover {text-decoration:none;}
-.inverted .light-switch, .inverted .light-switch:visited {background-color:#3076b3 !important;color:#398ed8;}
+.inverted .light-switch, .inverted .light-switch:visited {background-color:none !important;color:#317aba;}
 
 /* Inverted Color Scheme */
 .inverted .wrapper {color:#f2f2f2;background:#222;}
 .inverted ::selection {background-color:rgba(255,111,202,.8);color:white;}
 .inverted .portfolio-entry a .title {color:#f2f2f2;}
-.inverted ul.tags a {background:#333;color:#777;}
-.inverted ul li ul li {color:inherit !important;}
-.inverted ul.tags a:hover {background:#555;color:#ccc;}
-.inverted h6#tab a {color:#444;}
-.inverted h6#tab a:hover {color:#CCC;}
-.inverted h6#tab .open, .inverted h6#tab a.open:hover {color:#AAA;}
 .inverted .logo.inverse {display:block;}
 .inverted .logo {display:none;}
 .logo.inverse {display:none;}
@@ -191,7 +172,7 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 #navigation .button:active {top:0px;color:white;background-color:rgba(58,195,204,1);text-decoration:none;}
 #navigation .light-switch {text-align:center;background-color:rgba(62,144,214,1);}
 #navigation .light-switch:active {background-color:rgba(62,144,214,1);}
-.inverted #navigation .light-switch {color:#398ed8;background:#317aba !important;}
+.inverted #navigation .light-switch {color:#317aba;background:none !important;}
 #navigation .light-switch.button:active {float:right;}
 
 
@@ -243,8 +224,7 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 	/* Text Changes */
 	ul.tags a {padding:3.5px 7px;font-size:13px;}
 	p, h3 {margin-top:0px;margin-bottom:35px;}
-	h3, h6#tab a {font-size:16px;line-height:28px;} /* Well Built Web Subtext */
-	h2, h4, h5, h6 {font-size:26px;margin-bottom:7px;} /* Section Titles */
+	h2, h4, h5 {font-size:26px;margin-bottom:7px;} /* Section Titles */
 	
  	/* Portfolio Section */
 	.portfolio-entry .description {font-size:15px;line-height:21px;}
