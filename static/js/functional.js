@@ -132,7 +132,8 @@ $(window).load(function() {
 		request.done(function (response){
 			$('.request-loading').removeClass('active');
 			$form.addClass('sent');   		
-			$('.sent .submit-button').val('Request Sent');
+			$('.sent .submit-button').slideUp();
+			$('.sent .success-bar').slideDown();
 			console.log(response.message, ' Sent project request');
 		});
 
