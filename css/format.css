@@ -5,6 +5,7 @@
 
 /*************************************************/
 
+<<<<<<< HEAD
 body {font-family: 'Inconsolata', sans-serif;font-size:16px;font-weight:500;line-height:24.5px;background:#f2f2f2;color:#2a2a2a;}
 ::selection {background-color:rgba(255,111,202,.4);color:black;}	
 
@@ -16,8 +17,20 @@ body {font-family: 'Inconsolata', sans-serif;font-size:16px;font-weight:500;line
 .wrapper {background:#f2f2f2;overflow:hidden;}
 .page {margin-top:70px;}
 .section {margin-bottom:98px;/* padding-bottom:154px; */} /* margin-bottom:13.666%; */
+=======
+/* Document Layout */
+::selection {background-color:rgba(0,255,154,.75);color:#222;}	
+body {font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
+.pure-g, #navigation .pure-u-1 {max-width:880px;position:relative;margin:auto;}
+.pure-g.wide {max-width:1024px;}
+.page {margin-top:140px;}
+.section {margin-bottom:98px;overflow:hidden;}
+>>>>>>> master
 .content {margin:0px 20px;}
+#footer {margin-bottom:0px;font-size:13px;}
+#testimonials {margin-bottom:21px;}
 
+<<<<<<< HEAD
 /* Animations */
 body, .wrapper {transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;}
 
@@ -48,13 +61,37 @@ blockquote {font-size:16px;line-height:22px;margin:0px;font-style:italic;font-we
 cite {margin-bottom:7px;margin-top:0px;font-style:normal;}
 ul li {list-style-type: square;}
 ul {margin-top:7px;}
+=======
+/* Navigation */
+#navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.9);}
+.lco-logo {background-image:url('../static/images/logo@2x-off.png');background-size:100%;width:140px;height:54px;}
+.lco-logo:hover {background-image:url('../static/images/logo@2x-on.png');}
 
-/* Links */
-a {text-decoration:none;color:#3e90d6;outline:none;transition: all 0.25s ease;}
+/* Text */
+h1 {font-size:27px;line-height:55px;font-weight:400;margin-bottom:14px;margin-top:28px;}
+h1 strong {display:block;font-size:80px;font-weight:600;margin-bottom:14px;color:#00ff90;}
+h2 {font-size:20px;line-height:35px;margin-bottom:70px;font-weight:300;max-width:700px;}
+h3 {font-size:25px;line-height:28px;font-weight:600;margin-top:0px;margin-bottom:14px;}
+h4 {font-size:17px;font-weight:500;margin-top:0px;margin-bottom:3.5px;}
+
+p {margin:0px 0px 14px 0px;}
+a, a:visited, a:active {text-decoration:none;color:#03e985;outline:none;transition: all 0.25s ease;}
 a:hover {text-decoration:underline}
-a:visited {color:gray;}
-a:active {color:#6ccc59;}
 
+.lco-button, .lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 20px;border:2px solid #424242;color:#424242;background-color:transparent;}
+.lco-button:hover {text-decoration:none;border-color:#00ff90;background-color:#00ff90;color:black;}
+
+/* About */
+#about h3 {font-size:22px;font-weight:400;margin-bottom:21px;color:#00ff90;}
+#about p {margin:0px;}
+#about p strong {display:block;font-weight:800;}
+#about .lco-feature {text-align:center;padding:35px 14px;background:rgba(24,24,24,.5);margin-right:14px;margin-bottom:14px;}
+#about .lco-feature p strong {display:block;text-transform:uppercase;font-size:15px;font-weight:600;letter-spacing:1px;}
+#about .lco-feature p {/* margin-right:14px;margin-bottom:49px; */font-weight:300;font-size:15px;}
+>>>>>>> master
+
+
+<<<<<<< HEAD
 /* Buttons */
 .button {position:relative;top:0px;transition: all .15s ease-in-out;-moz-transition: all .15s ease-in-out;-webkit-transition: all .15s ease-in-out;-ie-transition: all .15s ease-in-out;-o-transition: all .15s ease-in-out;}
 .button {font-size:13px;font-weight:400;color:white;line-height:28px;padding:7px 24.5px;display:inline-block;text-decoration:none;position:relative;}
@@ -69,12 +106,27 @@ a:active {color:#6ccc59;}
 .portfolio-entry {clear:both;}
 .portfolio-entry a .title {display:inline-block;font-weight:600;color:#2a2a2a;transition: all .2s ease-in-out;-moz-transition: all .2s ease-in-out;-webkit-transition: all .2s ease-in-out;-ie-transition: all .2s ease-in-out;-o-transition: all .2s ease-in-out;}
 .portfolio-entry a .url {display:block;}
+=======
+/* Portfolio - Sticky Sidebar */
+.stuck {position:fixed;top:140px;}
+.stop {position:absolute;bottom:0px;}
+.start {position:absolute;top:0px;}
+
+/* Portfolio - Projects */
+#welcome h3 {font-size:15px;font-weight:400;margin:0px;}
+#welcome h3 strong {display:block;font-size:32px;padding-bottom:14px;}
+#welcome p {margin:0px;font-size:20px;line-height:35px;font-weight:300;}
+#portfolio h4 {font-size:22px;padding-bottom:28px;}
+
+.portfolio-entry {clear:both;font-weight:300;}
+.portfolio-entry a .title {font-weight:600;}
+.portfolio-entry a .url {display:block;color:white;}
+>>>>>>> master
 .portfolio-entry a:hover {text-decoration:none;}
 .portfolio-entry a:hover .url, .portfolio-entry.more-entries a:hover {text-decoration:underline;}
-.portfolio-entry .description {margin:0px 0px 21px 0px;}
+.portfolio-entry .description {margin:0px 0px 21px 0px !important;}
 .more-entries a {display:block;float:left;clear:both;}
 
-/* Portfolio Design/Dev Labels */
 .p-label {font-size:12px;margin-top:0px;float:right;}
 .circle {vertical-align:middle;display:inline-block;border-radius:0%;width: 6px;height: 6px;line-height:21px;}
 .circle.pink {background-color:rgba(62,144,214,1);}
@@ -82,6 +134,7 @@ a:active {color:#6ccc59;}
 .portfolio-entry .circle {margin-left:5px;}
 .more-entries .circle {float:left;}
 
+<<<<<<< HEAD
 /* Request Form */
 #request-a-quote p {margin-bottom:21px;}
 input/*,  input:-webkit-autofill */ {-webkit-appearance: none;border-radius:0px;box-sizing:border-box;transition: all 0.25s ease;outline:none;border:0px;box-shadow:none;background-color:white;font-size:14px;color:#2a2a2a;width:100%;margin-bottom:21px;padding:10px;border:3.5px solid #fff;-webkit-text-fill-color:#999;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
@@ -149,6 +202,9 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 .icon-cog:before { content: '\e803'; } /* '' */
 
 /* Popup Customizations */
+=======
+/* Adventure Popup */
+>>>>>>> master
 .mfp-bg {background:#222;opacity:.97;}
 .mfp-figure:after {box-shadow:none;}
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {position:fixed;margin-right:15px;}
@@ -159,15 +215,52 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 .adventure-nav.left {left:0px;}
 .adventure-nav.right {right:0px;}
 
-/* Popup Zoom/fade */
-.my-mfp-zoom-in {opacity: 0;-webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.8); }
-.my-mfp-zoom-in.mfp-ready {opacity: 1;-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
-.my-mfp-zoom-in.mfp-removing {-webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.8); opacity: 0;}
-.my-mfp-zoom-in.mfp-bg {opacity: 0;-webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; -o-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out;}
-.my-mfp-zoom-in.mfp-ready.mfp-bg {opacity: 0.97;}
-.my-mfp-zoom-in.mfp-removing.mfp-bg {opacity: 0;}
+/* About Popup */
+#lco-about, #lco-contact {max-width:600px;margin:auto;margin-top:0px;background:#222;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:300;}
+#lco-about {font-size:17px;line-height:28px;}
+#lco-contact a {text-decoration:underline;}
+#lco-contact img {margin-bottom:14px;}
+.lco-black.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.lco-green.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.mfp-close, .mfp-close:active {right:28px;top:28px;opacity:1;color:white !important;}
+.mfp-close:hover {opacity:.8;}
+
+/* Popup Animations */
+.lco-black, .lco-green {opacity: 0;-webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; -o-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out; -webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.8); }
+.lco-black.mfp-ready, .lco-green.mfp-ready {opacity: 1;-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
+.lco-black.mfp-removing, .lco-green.mfp-removing {-webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.8); opacity: 0;}
+.lco-black.mfp-bg, .lco-green.mfp-bg {opacity: 0;-webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; -o-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out;}
+.lco-black.mfp-ready.mfp-bg, .lco-green.mfp-ready.mfp-bg {opacity:1;}
+.lco-black.mfp-removing.mfp-bg, .lco-green.mfp-removing.mfp-bg {opacity: 0;}
+
+/* Testimonials */
+.testimonial {max-width:767px;margin:28px 0px;}
+blockquote {font-size:22px;line-height:35px;margin:0px;font-style:italic;font-weight:300;}
+cite {margin-bottom:7px;margin-top:0px;font-style:normal;font-weight:300;}
+cit strong {}
+#testimonials h3 {margin:0px;}
+
+
+/* Slideshow Buttons */
+.button.next, .button.prev {text-decoration:none;display:inline-block;background:#dedede;color:#676767;font-size:12px;padding:1px 10px;margin:0px 7px 7px 0px;}
+.button.next:hover, .button.prev:hover {background-color:rgba(62,144,214,1);color:white;}
+
+/* Utility Classes */
+.hide {display:none;}
+.center {text-align:center;}
+.right {text-align:right;}
+.topless {margin-top:0px;}
+.fl-left {float:left;}
+.fl-right {float:right;}
+.add-bottom {margin-bottom:42px;}
+.animate {	transition: all .1s ease-in-out;
+			-moz-transition: all .1s ease-in-out;
+			-webkit-transition: all .1s ease-in-out;
+			-ie-transition: all .1s ease-in-out;
+			-o-transition: all .1s ease-in-out; }
 
 /* Mobile */
+<<<<<<< HEAD
 #navigation {display:none;width:100%;max-width:none;position:fixed;top:0px;z-index:1;background-color:rgba(62,144,214,1);}
 #navigation .button {padding:7px 14px;float:left;display:block;}
 #navigation .button.open {background-color:rgba(58,195,204,1);text-decoration:none;}
@@ -183,6 +276,8 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 #navigation .light-switch {right:0px;left:initial;}
 .light-switch.icon-light-up {display:none;}
 .page {margin-top:98px;}
+=======
+>>>>>>> master
 
 @media screen and (max-width: 64em) { 
 	
@@ -191,51 +286,49 @@ input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus 
 
 @media screen and (max-width: 48em) {
 
-	.page {margin:0px/* 20px 20px 20px 20px */;margin-top:59px;font-size:17px;line-height:24.5px;}
-	.section {margin-bottom:52px;padding-bottom:0px;}
-
-	/* Show our mobile menu */
-/* 
-	#navigation {display:block;}
-	#navigation .light-switch {right:0px;left:initial;}
- */
- 
-
+	.page {margin-top:100px;}
+	.section {margin-bottom:0px;}
 	
-	/* Utility Classes */
-	.hide-sm {display:none !important;}
+	h2 {margin-bottom:21px;}
 	
 	/* Unstick the welcome sidebar for single column */
-	.stuck {position:relative;}
-	.stop {position:relative;bottom:initial;}
+	.stuck, .stop, .start {position:relative;bottom:initial;top:initial;}
 	
 	/* Remove left margin on content wrap for single column */
 	.content {margin:20px;}
-	
-	/* Slightly reduce bottom margins */
-	.add-bottom {margin-bottom:28px;}
-	
-	/* Remove my mug on single column */
-	.content.portrait {display:none;}
-	
+	#navigation .content {margin:0px 20px;}
+		
 	/* Popup */
 	.adventure-nav {z-index:2000;color:#fff;top:40%;}
 	.adventure-nav.left {left:0px;}
 	.adventure-nav.right {right:0px;}
 	
+<<<<<<< HEAD
 	/* Text Changes */
 	ul.tags a {padding:3.5px 7px;font-size:13px;}
 	p, h3 {margin-top:0px;margin-bottom:35px;}
 	h2, h4, h5 {font-size:26px;margin-bottom:7px;} /* Section Titles */
 	
+=======
+>>>>>>> master
  	/* Portfolio Section */
 	.portfolio-entry .description {font-size:15px;line-height:21px;}
 	#portfolio h5 {margin-bottom:0px;}
 	.p-label {clear:both;float:none;margin-bottom:21px;}
+	
+	#testimonials {margin-top:35px;}
+	.testimonial {margin:0px;}
 
 }
 
 @media screen and (max-width: 35.5em) {
+	h1 {line-height:35px;}
+	h1 strong {line-height:77px;}
 	/* Drop design/dev lable underneath featured work */
 	.p-label {clear:both;float:none;}
+	#portfolio h4 {padding-bottom:0px;}
+}
+
+@media screen and (max-width: 22em) {
+	.lco-button, .lco-button:active, .lco-button:visited {font-size:11px;padding:5px 10px;margin-top:6px;}
 }
