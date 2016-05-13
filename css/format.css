@@ -7,7 +7,7 @@
 
 /* Document Layout */
 ::selection {background-color:rgba(0,255,154,.75);color:#222;}	
-body {font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
+body {font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
 .pure-g, #navigation .pure-u-1 {max-width:880px;position:relative;margin:auto;}
 .pure-g.wide {max-width:1024px;}
 .page {margin-top:140px;}
@@ -18,8 +18,8 @@ body {font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;backgro
 
 /* Navigation */
 #navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.9);}
-.lco-logo {background-image:url('../images/logo@2x-off.png');background-size:100%;width:140px;height:54px;}
-.lco-logo:hover {background-image:url('../images/logo@2x-on.png');}
+.lco-logo {background-image:url('../static/images/logo@2x-off.png');background-size:100%;width:140px;height:54px;}
+.lco-logo:hover {background-image:url('../static/images/logo@2x-on.png');}
 
 /* Text */
 h1 {font-size:27px;line-height:55px;font-weight:400;margin-bottom:14px;margin-top:28px;}
@@ -86,8 +86,8 @@ a:hover {text-decoration:underline}
 #lco-about {font-size:17px;line-height:28px;}
 #lco-contact a {text-decoration:underline;}
 #lco-contact img {margin-bottom:14px;}
-.lco-black.mfp-bg {background-image:url('../images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
-.lco-green.mfp-bg {background-image:url('../images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.lco-black.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.lco-green.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
 .mfp-close, .mfp-close:active {right:28px;top:28px;opacity:1;color:white !important;}
 .mfp-close:hover {opacity:.8;}
 
