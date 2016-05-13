@@ -1,151 +1,16 @@
+
 // Initalize functions once window loads
 $(window).load(function() {
 
 	// Initialize Sticky Sidebar
-	sticky('#welcome', '#portfolio', true);
+	lco_sticky('#welcome', '#portfolio', false);
 
 	// Re-initialize Sticky Sidebar on Resize
 	$(window).resize(function() {
 		$(window).unbind("scroll");
-		sticky('#welcome', '#portfolio');
-	});
-	
-	// Request Form
-	var request;
-	$("#make-request").submit(function(event){
-
-		// Abort any pending request
-		if (request) {
-			request.abort();
-			$('.request-loading').removeClass('active');
-		}
-	
-		// Remove any errors
-		// 	$(this).removeClass('error');
-		// 	$(this).prev().removeClass('error');
-	
-		// Setup variables
-		var $form = $(this);
-		var $inputs = $form.find("input, select, textarea");
-
-		// Simple Validation (if any input entered)   
-		for (index = 0; index < $inputs.length; ++index) {
-			if ($inputs[index].value == '' && index !== 3) {
-
-				// Setup our jquery object
-				$input = $($inputs[index]);
-
-				// Throw error if no value is entered
-				$input.addClass('error');
-				$input.prev().addClass('error');
-
-		// 		dest = $('#make-request').offset().top - 100;
-		// 		$('html,body').animate({scrollTop: dest}, 350, 'swing');	
-				$('.request-loading').removeClass('active');
-				$input.focus();
-				return false;
-			}
-		}
-	
-		// Serialize the data in the form
-		var serializedData = $form.serialize();
-
-		// Disable inputs and add processing classes
-		$('.request-loading').addClass('active');
-		$inputs.prop("disabled", true);
-
-		// Send Request via AJAX
-		request = $.ajax({
-			url: "http://script.google.com/macros/s/AKfycbyLB1RX74Gi5gb2sCd5xH6_O_kRGU56jiNxVCv75XD8o6rQb1c/exec",
-			type: "post",
-			data: serializedData
-		});
-
-		// Success
-		request.done(function (response, textStatus, jqXHR){
-			$('.request-loading').removeClass('active');
-			$form.addClass('sent');   		
-			$('.sent .submit-button').val('Request Sent');   		
-		});
-
-		// Failure
-		request.fail(function (jqXHR, textStatus, errorThrown){
-			$('.request-loading').removeClass('active');
-			$form.append("<p style='clear:both;padding-top:21px;'>I'm sorry, we're having an issue with our server at the moment. For an estimate, please call me at (512) 705-8010 or email me at mike@lacourse.co</p>");
-			$form.append(jqXHR,textStatus,errorThrown);
-			console.log(jqXHR,textStatus,errorThrown);
-		});
-
-		event.preventDefault();
+		lco_sticky('#welcome', '#portfolio', false);
 	});
 
-});
-
-// Switch for Inverted Colors
-// $('.light-switch').click(function(e) {
-$( ".light-switch" ).bind( "tap", function( e ){ 
-
-	$('body').toggleClass('inverted');
-	
-	if ($(this).text() == 'On') {
-		$('.light-switch').text('Off');
-		var expire = Date.now() + 1000000000;
-		document.cookie = "invert=true;expires="+expire+";path=/";
-	}
-	else {
-		$('.light-switch').text('On');		
-		var expire = Date.now() + 1000000000;
-		document.cookie = "invert=false;expires="+expire+";path=/";
-	}
-	
-	e.preventDefault();
-	
-});
-
-// Simple Smooth Scrolling using Tap Library
-var hashTagActive = "";
-var event;
-$( ".smooth-scroll" ).bind( "tap", function(event){ 
-
-	event.preventDefault();
-
-	// Tell our scroll event to not do anything right now
-	window.scrolling = true;
-	
-	// Highlight our nav
-	$('#navigation').find('.button').removeClass('open');
-	$(this).addClass('open');
-	
-	// Add margin to top of scroll position, use section margin
-	var offset = $('.section').css("marginBottom").replace('px', '');
-
-	//calculate destination place
-	var dest = 0;
-	if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-		dest = $(document).height() - $(window).height();
-	} else {
-		dest = $(this.hash).offset().top - offset;
-	}
-	
-	//go to destination
-	$('body').animate(
-		{ scrollTop: dest }, 
-		250,
-		function() {
-			window.scrolling = false;
-		});
-	hashTagActive = this.hash;
-
-}); 
-
-
-
-// Tab Interaction under Services
-$('#tab .switch').bind( "tap", function(e) {
-	if( !$(this).hasClass('open') ) {
-		$('ul.tags, #tab .switch').toggleClass('open');
-	}
-	e.preventDefault();
 });
 
 // Photo Gallery for Adventures in Footer
@@ -164,83 +29,69 @@ $('.adventures').magnificPopup({
 	}
 });
 
-// Form Error Handling (Interaction)
-$('input, textarea').click(function() {
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
+$('.lco-logo').magnificPopup({
+	type: 'inline',
+	mainClass: 'lco-black',
+	//closeBtnInside: false,
 });
-$('input, textarea').on('input',function() {
-	$(this).removeClass('error');
-	$(this).prev().removeClass('error');
+
+$('.lco-button').magnificPopup({
+	type: 'inline',
+	mainClass: 'lco-green',
+	//closeBtnInside: false,
 });
 
 // Sticky Sidebar & Navigation Highlight on Scroll
-function sticky(sidebar,content,nav) {
+function lco_sticky(sidebar,content,guides) {
 
 	window.scrolling = false;
 
 	// Reset element width in case window has been resized
-	$(sidebar).children('.sticky').css({'width':'auto'}).removeClass('stuck stop');
+	$(sidebar).children('.sticky').css({'width':'auto'}).removeClass('stuck stop start');
+
+		
 
 	// Variables
-	var $window		= $(window),
+	var stuck		= false,
+		$window		= $(window),
 		$sidebar	= $(sidebar).children('.sticky'),
-		$nav		= $('#navigation'),
-		stuck		= false,
-		contact		= false,
-		width		= $(sidebar).width(),
-		end			= $(content).outerHeight() - $window.outerHeight() -
-						( $sidebar.outerHeight() - $window.outerHeight() ),
-		end2		=  ($('#about').outerHeight() + $('#testimonials').outerHeight() + $('#intro').outerHeight()); // 2nd section trigger
-
-	// Setup Sticky on load
-	if ( $window.scrollTop() > end) {
-		$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
-		stuck = false;
-		if ($window.scrollTop() > end2 ) {
-			$($nav.find('.button')[2]).addClass('open');
-			contact = true;
-		} else {
-			$($nav.find('.button')[1]).addClass('open');
-		}
-	} else {
-		$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
-		stuck = true;
-		$($nav.find('.button')[0]).addClass('open');
+		width		= $(sidebar).outerWidth(),
+		start		= $sidebar.offset().top - 140, // adding top margin here
+		end			= ( $(content).offset().top + $(content).outerHeight() ) 
+						- $window.outerHeight() + $sidebar.outerHeight() - 70;
+	
+	// Show Scroll Guides					
+	if(guides) {
+		$('.page').prepend('<div style="position:absolute;background:red;height:5px;width:100%;z-index:2000;top:'+start+'px;"></div>');
+		$('.page').prepend('<div style="position:absolute;background:red;height:5px;width:100%;z-index:2000;top:'+end+'px;"></div>');
 	}
 
+	// Setup Sticky on load
+	lco_detect_scroll_position()
+	
 	// Stick according to scroll position
 	$window.scroll(function (event) {
 		
 		var scroll = $window.scrollTop();
-		if (scroll >= end && scroll < end2 && ( stuck == true || contact == true )) { // Services
-			$sidebar.removeClass('stuck').addClass('stop').css({'width':width+'px' });
-			stuck = false;
+		lco_detect_scroll_position();
 
-			// Nav Highlighting
-			if (window.scrolling == false) {
-				$nav.find('.button').removeClass('open');
-				$($nav.find('.button')[1]).addClass('open');
-				contact = false;
-			}
-		} 
-		else if (scroll <= end && stuck == false) { // Work
-			$sidebar.addClass('stuck').removeClass('stop').css({'width':width+'px'});
-			stuck = true;
+		if (guides) {
+			console.log(' | start: ' + start,' | scroll: ' + scroll,' | end: ' + end + ' |');
+		}
 
-			// Nav Highlighting
-			if (window.scrolling == false) {
-				$nav.find('.button').removeClass('open');
-				$($nav.find('.button')[0]).addClass('open');
-				contact = false;	
-			}
-		}
-		else if (scroll >= end2 && contact == false && window.scrolling == false ) { // Contact
-			// Nav Highlighting
-			$nav.find('.button').removeClass('open');
-			$($nav.find('.button')[2]).addClass('open');
-			contact = true;
-		}
 	});
+	
+	function lco_detect_scroll_position() {
+		if ( $window.scrollTop() < start ) {
+			$sidebar.removeClass('stuck').removeClass('stop').addClass('start').css({'width':width+'px' });
+			stuck = false;
+		} else if ( ( start < $window.scrollTop() ) && ( $window.scrollTop() < end ) ) {
+			$sidebar.addClass('stuck').removeClass('stop').removeClass('start').css({'width':width+'px'});
+			stuck = true;
+		} else {
+			$sidebar.removeClass('stuck').removeClass('start').addClass('stop').css({'width':width+'px' });
+			stuck = false;
+		}	
+	}
 
 }
