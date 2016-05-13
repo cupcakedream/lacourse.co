@@ -93,7 +93,7 @@ input.error, textarea.error {border:2px solid rgba(62,144,214,1) !important;}
 .error-text {display:none;font-size:13px;color:rgba(62,144,214,1);margin-bottom:3.5px;}
 .error-text.error {display:inline-block;}
 input:not([type^="submit"]):focus, textarea:focus, input:-webkit-autofill:focus {border-color:#fff;background-color:#fff;color:#2a2a2a;-webkit-text-fill-color:#2a2a2a;-webkit-box-shadow: 0 0 0px 1000px #fff inset;}
-.success-bar {font-size:14px;padding:10px;-webkit-appearance: none;border-radius:0px;max-width:none;width:100%;color:#f2f2f2;background-color:rgba(62,144,214,1);border:2px solid rgba(62,144,214,1);-webkit-text-fill-color:#f2f2f2;-webkit-box-shadow: 0 0 0px 1000px rgba(62,144,214,1) inset;margin-top:0px;margin-bottom:0px;}
+.success-bar {font-size:14px;padding:10px;-webkit-appearance: none;border-radius:0px;max-width:none;width:auto;color:#f2f2f2;background-color:rgba(62,144,214,1);border:2px solid rgba(62,144,214,1);-webkit-text-fill-color:#f2f2f2;-webkit-box-shadow: 0 0 0px 1000px rgba(62,144,214,1) inset;margin-top:0px;margin-bottom:0px;}
 .inverted .success-bar {color:#222;background-color:rgba(58,195,204,1)-webkit-text-fill-color:#222;-webkit-box-shadow: 0 0 0px 1000px rgba(58,195,204,1) inset;}
 
 /* Request Form Spinner */
