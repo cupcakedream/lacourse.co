@@ -33,7 +33,7 @@ p {margin:0px 0px 14px 0px;}
 a, a:visited, a:active {text-decoration:none;color:#03e985;outline:none;transition: all 0.25s ease;}
 a:hover {text-decoration:underline}
 
-.lco-button, .lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 20px;border:2px solid #424242;color:#424242;background-color:transparent;}
+.lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 20px;border:2px solid #424242;color:#424242;background-color:transparent;}
 .lco-button:hover {text-decoration:none;border-color:#00ff90;background-color:#00ff90;color:black;}
 
 /* About */
@@ -159,9 +159,7 @@ cit strong {}
 	#testimonials {margin-top:35px;}
 	.testimonial {margin:0px;}
 	
-	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}
-	
-	
+	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}	
 	
 
 }
