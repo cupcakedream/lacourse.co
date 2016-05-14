@@ -29,16 +29,22 @@ $('.adventures').magnificPopup({
 	}
 });
 
-$('.lco-logo').magnificPopup({
-	type: 'inline',
-	mainClass: 'lco-black',
-	//closeBtnInside: false,
+$('.lco-logo').bind( "tap", function( e ){ 
+	$.magnificPopup.open({
+		items: {  src: '#lco-about' },
+		type: 'inline',
+		mainClass: 'lco-black',
+		//closeBtnInside: false,
+	});
 });
 
-$('.lco-button').magnificPopup({
-	type: 'inline',
-	mainClass: 'lco-green',
-	//closeBtnInside: false,
+$('.lco-button').bind( "tap", function( e ){ 
+	$.magnificPopup.open({
+		items: {  src: '#lco-contact' },
+		type: 'inline',
+		mainClass: 'lco-green',
+		//closeBtnInside: false,
+	});
 });
 
 // Sticky Sidebar & Navigation Highlight on Scroll
