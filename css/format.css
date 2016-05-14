@@ -169,6 +169,7 @@ cit strong {}
 }
 
 @media screen and (max-width: 35.5em) {
+	.mfp-close, .mfp-close:active {right:14px;top:14px;}
 	#about .lco-feature p {font-size:17px;font-weight:400;}
 	#about .lco-feature p strong {font-size:19px;margin-bottom:7px;}
 	#about .lco-feature {margin-right:0px;}
