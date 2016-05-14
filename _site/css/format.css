@@ -7,7 +7,7 @@
 
 /* Document Layout */
 ::selection {background-color:rgba(0,255,154,.75);color:#222;}	
-body {overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
+body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
 .pure-g, #navigation .pure-u-1 {max-width:880px;position:relative;margin:auto;}
 .pure-g.wide {max-width:1024px;}
 .page {margin-top:140px;}
@@ -20,7 +20,7 @@ body {overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-s
 #navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.9);}
 .lco-logo {background-image:url('../static/images/logo@2x-off.png');background-size:100%;width:140px;height:54px;}
 .lco-logo:hover {background-image:url('../static/images/logo@2x-on.png');}
-#navigation .pure-u-1 {margin:22px auto;}
+#navigation .pure-u-1 {margin:22px auto;display:block;}
 
 /* Text */
 h1 {font-size:27px;line-height:55px;font-weight:400;margin-bottom:14px;margin-top:28px;}
@@ -43,7 +43,6 @@ a:hover {text-decoration:underline}
 #about .lco-feature {text-align:center;padding:35px 14px;background:rgba(24,24,24,.5);margin-right:14px;margin-bottom:14px;}
 #about .lco-feature p strong {display:block;text-transform:uppercase;font-size:15px;font-weight:600;letter-spacing:1px;}
 #about .lco-feature p {/* margin-right:14px;margin-bottom:49px; */font-weight:300;font-size:15px;}
-
 
 /* Portfolio - Sticky Sidebar */
 .stuck {position:fixed;top:140px;}
