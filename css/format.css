@@ -160,19 +160,26 @@ cit strong {}
 	.testimonial {margin:0px;}
 	
 	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}
+	
+	
+	
 
 }
 
 @media screen and (max-width: 35.5em) {
+	#about .lco-feature p {font-size:17px;font-weight:400;}
+	#about .lco-feature p strong {font-size:19px;margin-bottom:7px;}
 	#about .lco-feature {margin-right:0px;}
 	h1 {line-height:35px;}
-	h1 strong {line-height:77px;}
+	h1 strong {line-height:77px;font-size:70px;}
 	/* Drop design/dev lable underneath featured work */
 	.p-label {clear:both;float:none;}
 	#portfolio h4 {padding-bottom:0px;}
 	
+	
 }
 
 @media screen and (max-width: 22em) {
+	h1 strong {line-height:63px;font-size:60px;}
 	.lco-button, .lco-button:active, .lco-button:visited {font-size:11px;padding:5px 10px;margin-top:6px;}
 }
