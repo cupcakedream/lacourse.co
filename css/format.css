@@ -163,6 +163,8 @@ cit strong {}
 	
 	#lco-about, #lco-contact {padding:20px;}
 	
+	.lco-button:hover {border:2px solid #424242;color:#424242;background-color:transparent;}
+	
 
 }
 
