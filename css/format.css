@@ -34,7 +34,8 @@ a, a:visited, a:active {text-decoration:none;color:#03e985;outline:none;transiti
 a:hover {text-decoration:underline}
 
 .lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 20px;border:2px solid #424242;color:#424242;background-color:transparent;}
-.lco-button:hover {text-decoration:none;border-color:#00ff90;background-color:#00ff90;color:black;}
+.lco-button:hover, .lco-button.active {text-decoration:none;border-color:#00ff90;background-color:#00ff90;color:black;}
+.lco-button.active:hover {background:#00da78;border-color:#00da78;}
 
 /* About */
 #about h3 {font-size:22px;font-weight:400;margin-bottom:21px;color:#00ff90;}
