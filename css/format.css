@@ -91,8 +91,8 @@ a:hover {text-decoration:underline}
 #lco-about {font-size:17px;line-height:28px;}
 #lco-contact a {text-decoration:underline;}
 #lco-contact img {margin-bottom:14px;}
-.lco-black.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
-.lco-green.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.lco-black.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#111;}
+.lco-green.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#111;}
 .mfp-close, .mfp-close:active {right:28px;top:28px;opacity:1;color:white !important;}
 .mfp-close:hover {opacity:.8;}
 
