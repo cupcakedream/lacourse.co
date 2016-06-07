@@ -37,8 +37,8 @@ a:hover {text-decoration:underline}
 .lco-button:hover, .lco-button.active {text-decoration:none;/* border-color:#ff4040;background-color:#ff4040;color:white; */}
 .lco-button.active:hover {text-decoration:none;/* background:#00da78;border-color:#00da78; */}
 .lco-button-tag {float:left;clear:both;text-transform:uppercase;font-weight:600;font-size:12px;margin-top:7px;display:inline-block;padding:5px 20px;background:#111;border:2px solid #111;}
-.lco-button-tag.design {background:#1F89CC;border-color:#1F89CC;color:#40ffeb}
-.lco-button-tag.dev {background:#FFFD59;border-color:#FFFD59;color:#40cbff;}
+.lco-button-tag.design {color:#40ffeb}
+.lco-button-tag.dev {color:#40cbff;}
 
 /* About */
 #about h3 {font-size:22px;font-weight:400;margin-bottom:21px;color:#00ff90;}
