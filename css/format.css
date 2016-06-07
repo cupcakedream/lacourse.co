@@ -61,7 +61,7 @@ a:hover {text-decoration:underline}
 
 #portfolio {/* max-width:600px; */}
 .portfolio-entry {clear:both;font-weight:400;font-size:17px;margin-bottom:28px;}
-.portfolio-entry a .title {font-weight:600;color:white;display:block;}
+.portfolio-entry a .title {font-weight:600;color:white;display:block;line-height:21px;}
 .portfolio-entry a .url {display:block;color:#999;text-decoration:underline;}
 .portfolio-entry a:hover {text-decoration:none;}
 .portfolio-entry a:hover .url, .portfolio-entry.more-entries a:hover {text-decoration:underline;color:#40cbff;}
