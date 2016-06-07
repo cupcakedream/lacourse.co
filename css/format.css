@@ -36,7 +36,7 @@ a:hover {text-decoration:underline}
 .lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 40px;border:2px solid #FF4040;color:white;background-color:#FF4040;}
 .lco-button:hover, .lco-button.active {text-decoration:none;/* border-color:#ff4040;background-color:#ff4040;color:white; */}
 .lco-button.active:hover {text-decoration:none;/* background:#00da78;border-color:#00da78; */}
-.lco-button-tag {float:left;clear:both;text-transform:uppercase;font-weight:600;font-size:12px;margin-top:7px;display:inline-block;padding:5px 20px;background:#111;border:2px solid #111;}
+.lco-button-tag {float:left;clear:both;text-transform:uppercase;font-weight:600;font-size:12px;margin-top:7px;display:inline-block;padding:5px 20px;background:#222;border:2px solid #111;}
 .lco-button-tag.design {color:#40ffeb;border-color:#40ffeb;}
 .lco-button-tag.dev {color:#40cbff;border-color:#40cbff;}
 
