@@ -132,11 +132,6 @@ cit strong {}
 
 /* Mobile */
 
-@media screen and (max-width: 64em) { 
-	
-	
-}
-
 @media screen and (max-width: 48em) {
 
 	.page {margin-top:100px;}
@@ -185,6 +180,11 @@ cit strong {}
 	/* Drop design/dev lable underneath featured work */
 	.p-label {clear:both;float:none;}
 	#portfolio h4 {padding-bottom:0px;}
+	
+	.lco-button-tag {padding:0px 10px;font-size:10px;margin-bottom:7px;clear:none;margin-right:7px;}
+	.lco-button-tag.design {background:#40ffeb;color:#222;}
+	.lco-button-tag.dev {background:#40cbff;color:#222;}
+	#footer p {text-align:left;}
 	
 	
 }
