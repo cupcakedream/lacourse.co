@@ -1,33 +1,33 @@
 
 // Initalize functions once window loads
-$(window).load(function() {
-
-	// Initialize Sticky Sidebar
-	lco_sticky('#welcome', '#portfolio', false);
-
-	// Re-initialize Sticky Sidebar on Resize
-	$(window).resize(function() {
-		$(window).unbind("scroll");
-		lco_sticky('#welcome', '#portfolio', false);
-	});
-
-});
+// $(window).load(function() {
+// 
+// 	// Initialize Sticky Sidebar
+// 	lco_sticky('#welcome', '#portfolio', false);
+// 
+// 	// Re-initialize Sticky Sidebar on Resize
+// 	$(window).resize(function() {
+// 		$(window).unbind("scroll");
+// 		lco_sticky('#welcome', '#portfolio', false);
+// 	});
+// 
+// });
 
 // Photo Gallery for Adventures in Footer
-$('.adventures').magnificPopup({
-	type: 'image',
-	tLoading: 'Loading image...',
-	mainClass: 'my-mfp-zoom-in',
-	gallery: {
-		enabled: true,
-		navigateByImgClick: true,
-		arrowMarkup: '<div title="%title%" type="button" class="adventure-nav %dir%"></div>',
-		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-	},
-	image: {
-		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-	}
-});
+// $('.adventures').magnificPopup({
+// 	type: 'image',
+// 	tLoading: 'Loading image...',
+// 	mainClass: 'my-mfp-zoom-in',
+// 	gallery: {
+// 		enabled: true,
+// 		navigateByImgClick: true,
+// 		arrowMarkup: '<div title="%title%" type="button" class="adventure-nav %dir%"></div>',
+// 		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+// 	},
+// 	image: {
+// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+// 	}
+// });
 
 $('.lco-logo').bind( "tap", function( e ){ 
 	$.magnificPopup.open({

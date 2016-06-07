@@ -8,7 +8,7 @@
 /* Document Layout */
 ::selection {background-color:rgba(0,255,154,.75);color:#222;}	
 body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
-.pure-g, #navigation .pure-u-1 {max-width:880px;position:relative;margin:auto;}
+.pure-g, #navigation .pure-u-1 {max-width:767px;position:relative;margin:auto;}
 .pure-g.wide {max-width:1024px;}
 .page {margin-top:140px;}
 .section {margin-bottom:98px;overflow:hidden;}
@@ -17,15 +17,15 @@ body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-w
 #testimonials {margin-bottom:21px;}
 
 /* Navigation */
-#navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.9);}
-.lco-logo {background-image:url('../static/images/logo@2x-off.png');background-size:100%;width:140px;height:54px;}
+#navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.97);}
+.lco-logo {background-image:url('../static/images/logo@2x-on.png');background-size:100%;width:140px;height:54px;}
 .lco-logo:hover {background-image:url('../static/images/logo@2x-on.png');}
 #navigation .pure-u-1 {margin:22px auto;display:block;}
 
 /* Text */
-h1 {font-size:27px;line-height:55px;font-weight:400;margin-bottom:14px;margin-top:28px;}
-h1 strong {display:block;font-size:80px;font-weight:600;margin-bottom:14px;color:#00ff90;}
-h2 {font-size:20px;line-height:35px;margin-bottom:70px;font-weight:300;max-width:700px;}
+h1 {font-size:52px;line-height:60px;font-weight:600;margin-bottom:14px;margin-top:28px;}
+h1 strong {display:block;margin-bottom:14px;}
+h2 {font-size:21px;line-height:35px;margin-bottom:70px;font-weight:300;max-width:700px;}
 h3 {font-size:25px;line-height:28px;font-weight:600;margin-top:0px;margin-bottom:14px;}
 h4 {font-size:17px;font-weight:500;margin-top:0px;margin-bottom:3.5px;}
 
@@ -33,9 +33,9 @@ p {margin:0px 0px 14px 0px;}
 a, a:visited, a:active {text-decoration:none;color:#03e985;outline:none;transition: all 0.25s ease;}
 a:hover {text-decoration:underline}
 
-.lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 20px;border:2px solid #424242;color:#424242;background-color:transparent;}
-.lco-button:hover, .lco-button.active {text-decoration:none;border-color:#00ff90;background-color:#00ff90;color:black;}
-.lco-button.active:hover {background:#00da78;border-color:#00da78;}
+.lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 40px;border:2px solid #424242;color:#424242;background-color:transparent;}
+.lco-button:hover, .lco-button.active {/* text-decoration:none;border-color:#ff4040;background-color:#ff4040;color:white; */}
+.lco-button.active:hover {/* background:#00da78;border-color:#00da78; */}
 
 /* About */
 #about h3 {font-size:22px;font-weight:400;margin-bottom:21px;color:#00ff90;}
