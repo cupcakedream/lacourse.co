@@ -178,8 +178,10 @@ cit strong {}
 	#about .lco-feature p {font-size:17px;font-weight:400;}
 	#about .lco-feature p strong {font-size:19px;margin-bottom:7px;}
 	#about .lco-feature {margin-right:0px;}
+/* 
 	h1 {line-height:35px;}
 	h1 strong {line-height:77px;font-size:70px;}
+ */
 	/* Drop design/dev lable underneath featured work */
 	.p-label {clear:both;float:none;}
 	#portfolio h4 {padding-bottom:0px;}
