@@ -161,7 +161,9 @@ cit strong {}
 	
 	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}	
 	
-	#lco-about, #lco-contact {padding:20px;}		
+	#lco-about, #lco-contact {padding:20px;}	
+	
+	.lco-button-tag {padding:0px 10px;font-size:11px;border-width:1px;}	
 
 }
 
@@ -178,9 +180,9 @@ cit strong {}
 	.p-label {clear:both;float:none;}
 	#portfolio h4 {padding-bottom:0px;}
 	
-	.lco-button-tag {padding:0px 10px;font-size:10px;margin-bottom:7px;clear:none;margin-right:7px;}
-	.lco-button-tag.design {background:#40ffeb;color:#222;}
-	.lco-button-tag.dev {background:#40cbff;color:#222;}
+	.lco-button-tag {padding:0px 10px;border-width:1px;font-size:10px;margin-bottom:7px;clear:none;margin-right:7px;}
+	.lco-button-tag.design {border-color:#40ffeb;color:#222;}
+	.lco-button-tag.dev {border-color:#40cbff;color:#222;}
 	#footer p {text-align:left;}
 	
 	
