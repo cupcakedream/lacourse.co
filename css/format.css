@@ -36,9 +36,9 @@ a:hover {text-decoration:underline}
 .lco-button, .lco-button:focus, lco-button:active, .lco-button:visited {font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;font-weight:700;padding:11px 40px;border:2px solid #FF4040;color:white;background-color:#FF4040;}
 .lco-button:hover, .lco-button.active {text-decoration:none;/* border-color:#ff4040;background-color:#ff4040;color:white; */}
 .lco-button.active:hover {text-decoration:none;/* background:#00da78;border-color:#00da78; */}
-.lco-button-tag {text-transform:uppercase;font-weight:600;font-size:12px;margin-top:7px;display:inline-block;padding:5px 20px;background:#111;border:2px solid #111;}
-.lco-button-tag.design {background:#1F89CC;border-color:#1F89CC;}
-.lco-button-tag.dev {background:#FFFD59;border-color:#FFFD59;color:#111;}
+.lco-button-tag {float:left;clear:both;text-transform:uppercase;font-weight:600;font-size:12px;margin-top:7px;display:inline-block;padding:5px 20px;background:#111;border:2px solid #111;}
+.lco-button-tag.design {background:#1F89CC;border-color:#1F89CC;color:#40ffeb}
+.lco-button-tag.dev {background:#FFFD59;border-color:#FFFD59;color:#40cbff;}
 
 /* About */
 #about h3 {font-size:22px;font-weight:400;margin-bottom:21px;color:#00ff90;}
@@ -57,12 +57,12 @@ a:hover {text-decoration:underline}
 #welcome h3 {font-size:15px;font-weight:400;margin:0px;}
 #welcome h3 strong {display:block;font-size:32px;padding-bottom:14px;}
 #welcome p {margin:0px;font-size:20px;line-height:35px;font-weight:300;}
-#portfolio h4 {font-size:32px;padding-bottom:42px;font-weight:600;}
+#portfolio h4 {font-size:32px;margin-bottom:49px;font-weight:600;}
 
 #portfolio {/* max-width:600px; */}
-.portfolio-entry {clear:both;font-weight:400;font-size:17px;}
+.portfolio-entry {clear:both;font-weight:400;font-size:17px;margin-bottom:28px;}
 .portfolio-entry a .title {font-weight:600;color:white;}
-.portfolio-entry a .url {display:block;color:#40e2ff;}
+.portfolio-entry a .url {display:block;color:#999;}
 .portfolio-entry a:hover {text-decoration:none;}
 .portfolio-entry a:hover .url, .portfolio-entry.more-entries a:hover {text-decoration:underline;}
 .portfolio-entry .description {margin:0px 0px 21px 0px !important;}
@@ -87,7 +87,7 @@ a:hover {text-decoration:underline}
 .adventure-nav.right {right:0px;}
 
 /* About Popup */
-#lco-about, #lco-contact {max-width:600px;margin:auto;margin-top:0px;background:#222;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:300;}
+#lco-about, #lco-contact {max-width:600px;margin:auto;margin-top:0px;background:#222;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
 #lco-about {font-size:17px;line-height:28px;}
 #lco-contact a {text-decoration:underline;}
 #lco-contact img {margin-bottom:14px;}
