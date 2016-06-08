@@ -15,6 +15,7 @@ body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-w
 .content {margin:0px 20px;}
 #footer {margin-bottom:0px;font-size:13px;}
 #testimonials {margin-bottom:21px;}
+#intro {margin-bottom:42px;}
 
 /* Navigation */
 #navigation {width:100%;max-width:none;height:98px;position:fixed;top:0px;z-index:1;background-color:rgba(24,24,24,.97);}
@@ -46,7 +47,7 @@ a:hover {text-decoration:underline}
 #about p strong {display:block;font-weight:800;}
 #about .lco-feature {text-align:center;padding:35px 14px;background:rgba(24,24,24,.5);margin-right:14px;margin-bottom:14px;}
 #about .lco-feature p strong {display:block;text-transform:uppercase;font-size:15px;font-weight:600;letter-spacing:1px;}
-#about .lco-feature p {/* margin-right:14px;margin-bottom:49px; */font-weight:300;font-size:15px;}
+#about .lco-feature p {/* margin-right:14px;margin-bottom:49px; */font-weight:400;font-size:15px;}
 
 /* Portfolio - Sticky Sidebar */
 .stuck {position:fixed;top:140px;}
@@ -57,7 +58,7 @@ a:hover {text-decoration:underline}
 #welcome h3 {font-size:15px;font-weight:400;margin:0px;}
 #welcome h3 strong {display:block;font-size:32px;padding-bottom:14px;}
 #welcome p {margin:0px;font-size:20px;line-height:35px;font-weight:300;}
-#portfolio h4 {font-size:32px;margin-bottom:49px;font-weight:600;}
+#portfolio h4 {font-size:28px;line-height:42px;margin-bottom:63px;font-weight:600;}
 
 #portfolio {/* max-width:600px; */}
 .portfolio-entry {clear:both;font-weight:400;font-size:17px;margin-bottom:28px;}
