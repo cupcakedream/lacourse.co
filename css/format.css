@@ -182,13 +182,14 @@ cit strong {}
 	#portfolio h4 {padding-bottom:0px;}
 	
 	.lco-button-tag {padding:0px 10px;border-width:1px;font-size:10px;margin-bottom:7px;clear:none;margin-right:7px;}
-	.lco-button, .lco-button:active, .lco-button:visited {font-size:11px;padding:5px 10px;margin-top:6px;}
+	.lco-button, .lco-button:active, .lco-button:visited {font-size:12px;padding:10px 20px;margin-top:2px;}
 	#footer p {text-align:left;}
 	
 }
 
 @media screen and (max-width: 22em) {
 	h1 strong {line-height:63px;font-size:60px;}
+	.lco-button, .lco-button:active, .lco-button:visited {font-size:11px;padding:5px 10px;margin-top:6px;}
 	
 	.lco-logo {width:110px;margin-top:5px;background-repeat:no-repeat;}
 }
