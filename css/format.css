@@ -88,13 +88,14 @@ a:hover {text-decoration:underline}
 .adventure-nav.right {right:0px;}
 
 /* About Popup */
-#lco-about, #lco-contact {max-width:600px;margin:auto;margin-top:0px;background:#222;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
+#lco-about, #lco-contact {border-left:5px solid #FF4040;max-width:600px;margin:auto;margin-top:0px;background:#111;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
 #lco-about {font-size:17px;line-height:28px;}
+#lco-contact p {margin:0px;font-size:20px;line-height:35px;font-weight:600;text-align:left;}
 #lco-contact a {text-decoration:underline;}
-#lco-contact img {margin-bottom:14px;}
-.lco-black.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#111;}
-.lco-green.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#111;}
-.mfp-close, .mfp-close:active {right:28px;top:28px;opacity:1;color:white !important;}
+#lco-contact img {display:none;margin-bottom:14px;}
+.lco-black.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#000;}
+.lco-green.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#000;}
+.mfp-close, .mfp-close:active {right:10px;top:10px;opacity:1;color:white !important;}
 .mfp-close:hover {opacity:.8;}
 
 /* Popup Animations */
@@ -102,7 +103,7 @@ a:hover {text-decoration:underline}
 .lco-black.mfp-ready, .lco-green.mfp-ready {opacity: 1;-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
 .lco-black.mfp-removing, .lco-green.mfp-removing {-webkit-transform: scale(0.8); -moz-transform: scale(0.8); -ms-transform: scale(0.8); -o-transform: scale(0.8); transform: scale(0.8); opacity: 0;}
 .lco-black.mfp-bg, .lco-green.mfp-bg {opacity: 0;-webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; -o-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out;}
-.lco-black.mfp-ready.mfp-bg, .lco-green.mfp-ready.mfp-bg {opacity:1;}
+.lco-black.mfp-ready.mfp-bg, .lco-green.mfp-ready.mfp-bg {opacity:.85;}
 .lco-black.mfp-removing.mfp-bg, .lco-green.mfp-removing.mfp-bg {opacity: 0;}
 
 /* Testimonials */
