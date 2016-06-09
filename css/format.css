@@ -88,9 +88,9 @@ a:hover {text-decoration:underline}
 .adventure-nav.right {right:0px;}
 
 /* About Popup */
-#lco-about, #lco-contact {border-left:5px solid #FF4040;max-width:600px;margin:auto;margin-top:0px;background:#111;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
+#lco-about, #lco-contact {border-left:5px solid #FF4040;max-width:660px;margin:auto;margin-top:0px;background:#111;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
 #lco-about {font-size:17px;line-height:28px;}
-#lco-contact p {margin:0px;font-size:20px;line-height:35px;font-weight:600;text-align:left;}
+#lco-contact p {margin:0px;font-size:20px;line-height:35px;font-weight:400;text-align:left;}
 #lco-contact a {text-decoration:underline;}
 #lco-contact img {display:none;margin-bottom:14px;}
 .lco-black.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#000;}
