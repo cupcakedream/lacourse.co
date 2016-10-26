@@ -6,8 +6,8 @@
 /*************************************************/
 
 /* Document Layout */
-::selection {background-color:rgba(0,255,154,.75);color:#222;}	
-body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}	
+::selection {background-color:rgba(0,255,154,.75);color:#222;}
+body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}
 .pure-g, #navigation .pure-u-1 {max-width:767px;position:relative;margin:auto;}
 .pure-g.wide {max-width:1024px;}
 .page {margin-top:140px;}
@@ -88,13 +88,13 @@ a:hover {text-decoration:underline}
 .adventure-nav.right {right:0px;}
 
 /* About Popup */
-#lco-about, #lco-contact {border-left:5px solid #FF4040;max-width:660px;margin:auto;margin-top:0px;background:#111;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
+#lco-about, #lco-contact {max-width:660px;margin:auto;margin-top:0px;background:#222;padding:49px;font-size:18px;color:white;line-height:28px;font-weight:400;}
 #lco-about {font-size:17px;line-height:28px;}
 #lco-contact p {margin:0px;font-size:20px;line-height:35px;font-weight:400;text-align:left;}
 #lco-contact a {text-decoration:underline;}
 #lco-contact img {display:none;margin-bottom:14px;}
-.lco-black.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#000;}
-.lco-green.mfp-bg {/* background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1; */background-color:#000;}
+.lco-black.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
+.lco-green.mfp-bg {background-image:url('../static/images/bg-texture-dark@2x.jpg');background-size:150px;opacity:1;background-color:#222;}
 .mfp-close, .mfp-close:active {right:10px;top:10px;opacity:1;color:white !important;}
 .mfp-close:hover {opacity:.8;}
 
@@ -138,34 +138,34 @@ cit strong {}
 
 	.page {margin-top:100px;}
 	.section {margin-bottom:0px;}
-	
+
 	h2 {margin-bottom:21px;}
-	
+
 	/* Unstick the welcome sidebar for single column */
 	.stuck, .stop, .start {position:relative;bottom:initial;top:initial;}
-	
+
 	/* Remove left margin on content wrap for single column */
 	.content {margin:20px;}
 	#navigation .content {margin:0px 20px;}
-		
+
 	/* Popup */
 	.adventure-nav {z-index:2000;color:#fff;top:40%;}
 	.adventure-nav.left {left:0px;}
 	.adventure-nav.right {right:0px;}
-	
+
  	/* Portfolio Section */
 	.portfolio-entry .description {font-size:15px;line-height:21px;}
 	#portfolio h5 {margin-bottom:0px;}
 	.p-label {clear:both;float:none;margin-bottom:21px;}
-	
+
 	#testimonials {margin-top:35px;}
 	.testimonial {margin:0px;}
-	
-	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}	
-	
-	#lco-about, #lco-contact {/* padding:20px; */}	
-	
-	.lco-button-tag {padding:0px 10px;font-size:11px;border-width:1px;}	
+
+	#portfolio p {font-size:17px;font-weight:400;line-height:28px;}
+
+	#lco-about, #lco-contact {/* padding:20px; */}
+
+	.lco-button-tag {padding:0px 10px;font-size:11px;border-width:1px;}
 
 }
 
@@ -174,23 +174,23 @@ cit strong {}
 	#about .lco-feature p {font-size:17px;font-weight:400;}
 	#about .lco-feature p strong {font-size:19px;margin-bottom:7px;}
 	#about .lco-feature {margin-right:0px;}
-/* 
+/*
 	h1 {line-height:35px;}
 	h1 strong {line-height:77px;font-size:70px;}
  */
 	/* Drop design/dev lable underneath featured work */
 	.p-label {clear:both;float:none;}
 	#portfolio h4 {padding-bottom:0px;}
-	
+
 	.lco-button-tag {padding:0px 10px;border-width:1px;font-size:10px;margin-bottom:7px;clear:none;margin-right:7px;}
 	.lco-button, .lco-button:active, .lco-button:focus, .lco-button:visited {font-size:12px;padding:10px 20px;margin-top:2px;}
 	#footer p {text-align:left;}
-	
+
 }
 
 @media screen and (max-width: 22em) {
 	h1 strong {line-height:63px;font-size:60px;}
 	.lco-button, .lco-button:active, .lco-button:focus, .lco-button:visited {font-size:11px;padding:5px 10px;margin-top:6px;}
-	#lco-about, #lco-contact {padding:30px;}	
+	#lco-about, #lco-contact {padding:30px;}
 	.lco-logo {width:110px;margin-top:5px;background-repeat:no-repeat;}
 }
