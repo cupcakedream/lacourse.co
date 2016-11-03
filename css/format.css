@@ -6,7 +6,7 @@
 /*************************************************/
 
 /* Document Layout */
-::selection {background-color:rgba(0,255,154,.75);color:#222;}
+::selection {background-color:#aaa;color:#fff;}
 body {-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;font-weight:400;line-height:28px;letter-spacing:1px;background:#1c1c1c;background-image:url('../static/images/bg-texture@2x.jpg');background-size:150px;color:#fff;}
 .pure-g, #navigation .pure-u-1 {max-width:767px;position:relative;margin:auto;}
 .pure-g.wide {max-width:1024px;}
